@@ -1,0 +1,792 @@
+{
+  "stat_names": [
+    "luminance",
+    "RMS contrast",
+    "saturation",
+    "colorfulness",
+    "mean red",
+    "mean green",
+    "mean blue",
+    "red\u2013green balance",
+    "yellow\u2013blue balance",
+    "edge density",
+    "high-frequency power",
+    "entropy"
+  ],
+  "imagenet_states": [
+    {
+      "label": "baseline, epoch 5",
+      "run": "clip_vitb32_baseline",
+      "epoch": 5,
+      "pc_variance_fraction": [
+        0.06818671814091676,
+        0.04310433355324082,
+        0.038712076447001066,
+        0.035646684682870224,
+        0.033119005315243207,
+        0.026388672765415882,
+        0.024187665149883693,
+        0.023850887311255186,
+        0.022332371907433535,
+        0.021858464200000573
+      ],
+      "effective_dim": 55.75012763638307,
+      "mean_norm": 27.76955623590062,
+      "spearman": {
+        "PC1": {
+          "luminance": 0.010164473962655941,
+          "RMS contrast": -0.2346550575598687,
+          "saturation": 0.1240724659452085,
+          "colorfulness": -0.03035414374748496,
+          "mean red": -0.024239686256881034,
+          "mean green": 0.06241343842977506,
+          "mean blue": -0.1562354992489279,
+          "red\u2013green balance": -0.12381088522596773,
+          "yellow\u2013blue balance": 0.2946626313300035,
+          "edge density": 0.20088079142903195,
+          "high-frequency power": 0.2081620968809146,
+          "entropy": 0.09305852846376896
+        },
+        "PC2": {
+          "luminance": 0.22436710437423518,
+          "RMS contrast": -0.2359510997373169,
+          "saturation": 0.031116536215991832,
+          "colorfulness": 0.001471690580764096,
+          "mean red": 0.2040640124339315,
+          "mean green": 0.23102226715733787,
+          "mean blue": 0.15920975932985537,
+          "red\u2013green balance": -0.035720245449830504,
+          "yellow\u2013blue balance": 0.007353494722057304,
+          "edge density": -0.35591666419897416,
+          "high-frequency power": -0.14352116735295228,
+          "entropy": -0.3814521085767758
+        },
+        "PC3": {
+          "luminance": 0.21351705028946408,
+          "RMS contrast": -0.055972949067699104,
+          "saturation": -0.3308265602237498,
+          "colorfulness": -0.2870255559014225,
+          "mean red": -0.015061484765796962,
+          "mean green": 0.27112966404420297,
+          "mean blue": 0.39295286802621715,
+          "red\u2013green balance": -0.48665194909574583,
+          "yellow\u2013blue balance": -0.4408167410126275,
+          "edge density": 0.22866101010187873,
+          "high-frequency power": 0.35090431078317025,
+          "entropy": -0.04019635982395851
+        }
+      },
+      "pc1_r2_from_all_stats": 0.3214026043550766,
+      "spearman_pc1_vs_arc_angle": 0.0574939198282456
+    },
+    {
+      "label": "uniform images, epoch 5",
+      "run": "clip_vitb32_uniform_images_early",
+      "epoch": 5,
+      "pc_variance_fraction": [
+        0.9001533446765992,
+        0.0865327471239175,
+        0.007923175204099332,
+        0.0011339745277232707,
+        0.0008890048760309858,
+        0.0005729724740736564,
+        0.0004926101505397557,
+        0.00028554195877115676,
+        0.00024034791513859603,
+        0.00014307184898403315
+      ],
+      "effective_dim": 1.2227486030067642,
+      "mean_norm": 27.802881443366708,
+      "spearman": {
+        "PC1": {
+          "luminance": 0.9220514633801042,
+          "RMS contrast": 0.027105080178991766,
+          "saturation": -0.405991323107615,
+          "colorfulness": -0.0957889923668709,
+          "mean red": 0.8152901616598638,
+          "mean green": 0.8767801789358348,
+          "mean blue": 0.8200869753109072,
+          "red\u2013green balance": -0.02492231852837639,
+          "yellow\u2013blue balance": -0.14250276242109403,
+          "edge density": -0.08405781514223615,
+          "high-frequency power": -0.05487567323999466,
+          "entropy": 0.0010693137081572142
+        },
+        "PC2": {
+          "luminance": -0.5929632423510507,
+          "RMS contrast": 0.23375760456709246,
+          "saturation": 0.24393413308510753,
+          "colorfulness": 0.08405014458781371,
+          "mean red": -0.5095983478075299,
+          "mean green": -0.5636758894075807,
+          "mean blue": -0.5136038167097383,
+          "red\u2013green balance": 0.03444761316334956,
+          "yellow\u2013blue balance": 0.11914811791334266,
+          "edge density": 0.1749623618673645,
+          "high-frequency power": -0.050068198962320974,
+          "entropy": 0.25626171078220544
+        },
+        "PC3": {
+          "luminance": 0.6492133185268771,
+          "RMS contrast": -0.11764102633702819,
+          "saturation": -0.26300680160358175,
+          "colorfulness": -0.08561282866729363,
+          "mean red": 0.6063860336106649,
+          "mean green": 0.6073246868091077,
+          "mean blue": 0.524627553151864,
+          "red\u2013green balance": 0.04589940596575608,
+          "yellow\u2013blue balance": -0.03695189748544306,
+          "edge density": -0.1530677560885922,
+          "high-frequency power": -0.03409496833824545,
+          "entropy": -0.1810775508014991
+        }
+      },
+      "pc1_r2_from_all_stats": 0.4859106304062567,
+      "spearman_pc1_vs_arc_angle": 0.8227646797567312
+    },
+    {
+      "label": "image noise, epoch 5",
+      "run": "clip_vitb32_image_noise_early",
+      "epoch": 5,
+      "pc_variance_fraction": [
+        0.25798939008573757,
+        0.1868837898798358,
+        0.14644024766576189,
+        0.06615635330192585,
+        0.055302071739316574,
+        0.028941787329021786,
+        0.019528985391457657,
+        0.01728232522713994,
+        0.014417779853865399,
+        0.013254172814274545
+      ],
+      "effective_dim": 7.519462117602115,
+      "mean_norm": 27.779460815384557,
+      "spearman": {
+        "PC1": {
+          "luminance": 0.05779433862337419,
+          "RMS contrast": 0.14340851865917906,
+          "saturation": -0.33405931154391455,
+          "colorfulness": -0.1011094676113039,
+          "mean red": -0.15910883813156126,
+          "mean green": 0.0717373124936355,
+          "mean blue": 0.48397175086926,
+          "red\u2013green balance": -0.3871563330621558,
+          "yellow\u2013blue balance": -0.7786273630156535,
+          "edge density": -0.035142211853897806,
+          "high-frequency power": -0.08172083521672212,
+          "entropy": 0.10457169205619826
+        },
+        "PC2": {
+          "luminance": -0.6457579969879222,
+          "RMS contrast": 0.15739153409487172,
+          "saturation": 0.194691925525008,
+          "colorfulness": -0.011134513377302766,
+          "mean red": -0.7911589925285307,
+          "mean green": -0.530177286255528,
+          "mean blue": -0.4673168727170553,
+          "red\u2013green balance": -0.4259217374828949,
+          "yellow\u2013blue balance": -0.16688347092781214,
+          "edge density": 0.20375939049527542,
+          "high-frequency power": 0.0981623976494336,
+          "entropy": 0.006032514670533404
+        },
+        "PC3": {
+          "luminance": 0.6108098204361022,
+          "RMS contrast": -0.008501279934724347,
+          "saturation": -0.41858835011609147,
+          "colorfulness": -0.25124061177596296,
+          "mean red": 0.32531010320189196,
+          "mean green": 0.6888460976510455,
+          "mean blue": 0.6228261865230184,
+          "red\u2013green balance": -0.5413898072614263,
+          "yellow\u2013blue balance": -0.33498213340653993,
+          "edge density": 0.03104318282729249,
+          "high-frequency power": 0.13033074257197774,
+          "entropy": -0.16440671013493557
+        }
+      },
+      "pc1_r2_from_all_stats": 0.7803103804912175,
+      "spearman_pc1_vs_arc_angle": 0.2208408962196358
+    },
+    {
+      "label": "label shuffle, epoch 5",
+      "run": "clip_vitb32_label_shuffle_early",
+      "epoch": 5,
+      "pc_variance_fraction": [
+        0.39402627884312563,
+        0.14311121140326105,
+        0.13121176620854538,
+        0.09741415295425347,
+        0.032527671286446076,
+        0.0208717428611548,
+        0.013272879779983976,
+        0.012669408513670153,
+        0.009963611173290874,
+        0.008417528642191491
+      ],
+      "effective_dim": 4.883093562970174,
+      "mean_norm": 27.89082525570772,
+      "spearman": {
+        "PC1": {
+          "luminance": 0.7603024944202994,
+          "RMS contrast": -0.08890239849035672,
+          "saturation": -0.1031738305014464,
+          "colorfulness": 0.11933413890506755,
+          "mean red": 0.8939069346507297,
+          "mean green": 0.6615630193292942,
+          "mean blue": 0.4710195605653165,
+          "red\u2013green balance": 0.3900557850081967,
+          "yellow\u2013blue balance": 0.28591586084966175,
+          "edge density": -0.025201537163315697,
+          "high-frequency power": 0.015580087008733723,
+          "entropy": 0.0318533985695697
+        },
+        "PC2": {
+          "luminance": -0.3788045615075852,
+          "RMS contrast": -0.040884649380522775,
+          "saturation": 0.5197238749486465,
+          "colorfulness": 0.2969127585194042,
+          "mean red": -0.042641491676683504,
+          "mean green": -0.4611153130693726,
+          "mean blue": -0.6499356628572792,
+          "red\u2013green balance": 0.6793061146029777,
+          "yellow\u2013blue balance": 0.6668457683623299,
+          "edge density": 0.0232137142631578,
+          "high-frequency power": -0.018655366223952117,
+          "entropy": 0.047041533246066095
+        },
+        "PC3": {
+          "luminance": -0.6220410710576985,
+          "RMS contrast": -0.22442354244833784,
+          "saturation": 0.1786883683507953,
+          "colorfulness": 0.05318835568525963,
+          "mean red": -0.5914921937906635,
+          "mean green": -0.6082938103997549,
+          "mean blue": -0.37959093750298845,
+          "red\u2013green balance": -0.04796599127243481,
+          "yellow\u2013blue balance": -0.21998777344820233,
+          "edge density": -0.06766641502304876,
+          "high-frequency power": 0.11941408926247588,
+          "entropy": -0.25152505478977616
+        }
+      },
+      "pc1_r2_from_all_stats": 0.7075487349452608,
+      "spearman_pc1_vs_arc_angle": 0.4932637095432882
+    },
+    {
+      "label": "uniform images, epoch 10",
+      "run": "clip_vitb32_uniform_images_early",
+      "epoch": 10,
+      "pc_variance_fraction": [
+        0.9076675608699775,
+        0.03181346081670124,
+        0.027152467267348837,
+        0.009982033639480503,
+        0.005818128239544273,
+        0.0034452986953086556,
+        0.002817431279985198,
+        0.002009046202456236,
+        0.0018304555013371282,
+        0.001549739168874208
+      ],
+      "effective_dim": 1.21098321182685,
+      "mean_norm": 28.387889734215833,
+      "spearman": {
+        "PC1": {
+          "luminance": 0.14233873579340564,
+          "RMS contrast": 0.06957921724756055,
+          "saturation": -0.5288137312546898,
+          "colorfulness": -0.48134794179331275,
+          "mean red": -0.15789312279470208,
+          "mean green": 0.21860424832928416,
+          "mean blue": 0.46547073756959084,
+          "red\u2013green balance": -0.6437830314788358,
+          "yellow\u2013blue balance": -0.7143271038140354,
+          "edge density": -0.07563628939331982,
+          "high-frequency power": -0.017615135774990576,
+          "entropy": -0.12967653480832314
+        },
+        "PC2": {
+          "luminance": -0.3746263313089801,
+          "RMS contrast": -0.37872714402038604,
+          "saturation": 0.32505580029307746,
+          "colorfulness": 0.17584832004749393,
+          "mean red": -0.3355107605426851,
+          "mean green": -0.3608327822298761,
+          "mean blue": -0.31965769040542613,
+          "red\u2013green balance": -0.008382612157737482,
+          "yellow\u2013blue balance": -0.024465131702127184,
+          "edge density": -0.18347334241033275,
+          "high-frequency power": 0.1234399372516438,
+          "entropy": -0.3476560910792744
+        },
+        "PC3": {
+          "luminance": 0.029826719654324207,
+          "RMS contrast": -0.0659066332998784,
+          "saturation": 0.12849870462763568,
+          "colorfulness": 0.17079831219168368,
+          "mean red": 0.01938394153061527,
+          "mean green": 0.025378861442326563,
+          "mean blue": 0.05999851022438868,
+          "red\u2013green balance": -0.028101268702337798,
+          "yellow\u2013blue balance": -0.061312582234438764,
+          "edge density": -0.04849635375833006,
+          "high-frequency power": 0.007580147750994612,
+          "entropy": -0.014183826633005277
+        }
+      },
+      "pc1_r2_from_all_stats": 0.5787046951991144,
+      "spearman_pc1_vs_arc_angle": 0.9968830842005411
+    },
+    {
+      "label": "uniform images, epoch 31",
+      "run": "clip_vitb32_uniform_images_early",
+      "epoch": 31,
+      "pc_variance_fraction": [
+        0.13500897908885043,
+        0.10276953600032573,
+        0.09955396007264321,
+        0.08662443820897793,
+        0.07445012750407895,
+        0.06610269223579836,
+        0.06267953937059635,
+        0.05310191384018828,
+        0.048206192698862546,
+        0.043107419614841526
+      ],
+      "effective_dim": 14.239822447128837,
+      "mean_norm": 27.855684271099587,
+      "spearman": {
+        "PC1": {
+          "luminance": 0.02355287096438194,
+          "RMS contrast": 0.18800417642923942,
+          "saturation": -0.25252729745202873,
+          "colorfulness": -0.18188007599411457,
+          "mean red": 0.09811270389291833,
+          "mean green": -0.04606577998984679,
+          "mean blue": 0.16671500190521818,
+          "red\u2013green balance": 0.20794429856860322,
+          "yellow\u2013blue balance": -0.26785780485673133,
+          "edge density": -0.19296900911331225,
+          "high-frequency power": -0.22136351117606956,
+          "entropy": -0.13475358394741702
+        },
+        "PC2": {
+          "luminance": 0.1756264349954711,
+          "RMS contrast": -0.10867463946594115,
+          "saturation": 0.06647956594852887,
+          "colorfulness": 0.2287799576451965,
+          "mean red": 0.03258988617510258,
+          "mean green": 0.22480162267813833,
+          "mean blue": 0.23217696126296217,
+          "red\u2013green balance": -0.3344402177079387,
+          "yellow\u2013blue balance": -0.2187861184319489,
+          "edge density": -0.18676833340573537,
+          "high-frequency power": 0.01651063794149124,
+          "entropy": -0.3612706702402592
+        },
+        "PC3": {
+          "luminance": 0.13625760065963674,
+          "RMS contrast": -0.2153232966201411,
+          "saturation": 0.002253858395832836,
+          "colorfulness": -0.10448347410495061,
+          "mean red": 0.1843867088227177,
+          "mean green": 0.12735562240004308,
+          "mean blue": 0.01861015632928125,
+          "red\u2013green balance": 0.10687106601762505,
+          "yellow\u2013blue balance": 0.16234128211674295,
+          "edge density": -0.1669243458683941,
+          "high-frequency power": -0.0963374764767651,
+          "entropy": -0.20461996833533283
+        }
+      },
+      "pc1_r2_from_all_stats": 0.32572051816191383,
+      "spearman_pc1_vs_arc_angle": 0.2840948552753615
+    },
+    {
+      "label": "baseline, epoch 31",
+      "run": "clip_vitb32_baseline",
+      "epoch": 31,
+      "pc_variance_fraction": [
+        0.04777210541202066,
+        0.03292166855226574,
+        0.02403684121016888,
+        0.02077650531497967,
+        0.016507984862087464,
+        0.014981613517974024,
+        0.014478637991215019,
+        0.013738251387957876,
+        0.012746299667681572,
+        0.012344863897408144
+      ],
+      "effective_dim": 115.51368473861397,
+      "mean_norm": 27.646528923424185,
+      "spearman": {
+        "PC1": {
+          "luminance": 0.018994706267032327,
+          "RMS contrast": 0.15850199065067747,
+          "saturation": -0.07615413646979434,
+          "colorfulness": 0.03656269224011519,
+          "mean red": 0.06637626959273654,
+          "mean green": -0.023638514625735907,
+          "mean blue": 0.10416703895554533,
+          "red\u2013green balance": 0.126640533702093,
+          "yellow\u2013blue balance": -0.16668711124683552,
+          "edge density": -0.1817688678937446,
+          "high-frequency power": -0.1462531915095369,
+          "entropy": -0.14880828521190648
+        },
+        "PC2": {
+          "luminance": 0.0038875832226964455,
+          "RMS contrast": 0.2294043650949771,
+          "saturation": -0.16280318256969475,
+          "colorfulness": -0.0761364389745343,
+          "mean red": 0.027656635998325504,
+          "mean green": -0.029472104566459188,
+          "mean blue": 0.07920969482436033,
+          "red\u2013green balance": 0.09606950322631716,
+          "yellow\u2013blue balance": -0.10907509983328982,
+          "edge density": -0.09056445384558384,
+          "high-frequency power": -0.2196261199300602,
+          "entropy": 0.15206966919209558
+        },
+        "PC3": {
+          "luminance": 0.06463701152359277,
+          "RMS contrast": -0.08019208800353247,
+          "saturation": 0.050720274701450636,
+          "colorfulness": 0.012564940484871414,
+          "mean red": 0.17306310285723092,
+          "mean green": 0.02716395677915929,
+          "mean blue": -0.042323229603916455,
+          "red\u2013green balance": 0.24573033014754328,
+          "yellow\u2013blue balance": 0.1812604376179053,
+          "edge density": -0.44298836623149207,
+          "high-frequency power": -0.4243974485160938,
+          "entropy": -0.21164385712477615
+        }
+      },
+      "pc1_r2_from_all_stats": 0.16737951291433018,
+      "spearman_pc1_vs_arc_angle": 0.12877583553042563
+    }
+  ],
+  "cifar10": {
+    "n_train": 50000,
+    "n_test": 10000,
+    "probes": [
+      {
+        "feature_set": "baseline CLIP features",
+        "top1": 0.7773,
+        "C": 0.03162277660168379,
+        "n_features": 768,
+        "converged": true,
+        "c_selection": "val_sweep_v2",
+        "feature_scaling": "standardized",
+        "c_sweep": {
+          "C_grid": [
+            1e-06,
+            0.0001,
+            0.001,
+            0.0031622776601683794,
+            0.01,
+            0.03162277660168379,
+            0.1,
+            1.0,
+            100.0,
+            10000.0,
+            1000000.0
+          ],
+          "val_top1": [
+            0.6486,
+            0.7406,
+            0.7666,
+            0.7722,
+            0.774,
+            0.7741,
+            0.7704,
+            0.7632,
+            0.7617,
+            0.761,
+            0.7617
+          ],
+          "n_val": 10000,
+          "val_fraction": 0.2,
+          "val_seed": 0,
+          "sweep_max_iter": 2000
+        }
+      },
+      {
+        "feature_set": "collapsed CLIP features",
+        "top1": 0.4231,
+        "C": 10.0,
+        "n_features": 768,
+        "converged": true,
+        "c_selection": "val_sweep_v2",
+        "feature_scaling": "standardized",
+        "c_sweep": {
+          "C_grid": [
+            1e-06,
+            0.0001,
+            0.01,
+            1.0,
+            3.1622776601683795,
+            10.0,
+            31.622776601683793,
+            100.0,
+            1000.0,
+            10000.0,
+            1000000.0
+          ],
+          "val_top1": [
+            0.1699,
+            0.2645,
+            0.3704,
+            0.4164,
+            0.4181,
+            0.4183,
+            0.4156,
+            0.4182,
+            0.4169,
+            0.4147,
+            0.4137
+          ],
+          "n_val": 10000,
+          "val_fraction": 0.2,
+          "val_seed": 0,
+          "sweep_max_iter": 2000
+        }
+      },
+      {
+        "feature_set": "collapsed, arc axis (PC1) only",
+        "top1": 0.1245,
+        "C": 1.0,
+        "n_features": 1,
+        "converged": true,
+        "c_selection": "val_sweep_v2",
+        "feature_scaling": "standardized",
+        "c_sweep": {
+          "C_grid": [
+            1e-06,
+            0.0001,
+            0.01,
+            0.1,
+            0.31622776601683794,
+            1.0,
+            3.1622776601683795,
+            10.0,
+            100.0,
+            10000.0,
+            1000000.0
+          ],
+          "val_top1": [
+            0.1216,
+            0.122,
+            0.1247,
+            0.1253,
+            0.1254,
+            0.1255,
+            0.1255,
+            0.1255,
+            0.1255,
+            0.1255,
+            0.1255
+          ],
+          "n_val": 10000,
+          "val_fraction": 0.2,
+          "val_seed": 0,
+          "sweep_max_iter": 2000
+        }
+      },
+      {
+        "feature_set": "collapsed, top 3 PCs removed",
+        "top1": 0.4238,
+        "C": 0.1,
+        "n_features": 768,
+        "converged": true,
+        "c_selection": "val_sweep_v2",
+        "feature_scaling": "standardized",
+        "c_sweep": {
+          "C_grid": [
+            1e-06,
+            0.0001,
+            0.01,
+            0.03162277660168379,
+            0.1,
+            0.31622776601683794,
+            1.0,
+            10.0,
+            100.0,
+            10000.0,
+            1000000.0
+          ],
+          "val_top1": [
+            0.2608,
+            0.3542,
+            0.4154,
+            0.4196,
+            0.4231,
+            0.4175,
+            0.4162,
+            0.4149,
+            0.4154,
+            0.4148,
+            0.4143
+          ],
+          "n_val": 10000,
+          "val_fraction": 0.2,
+          "val_seed": 0,
+          "sweep_max_iter": 2000
+        }
+      },
+      {
+        "feature_set": "collapsed, low-level stats regressed out",
+        "top1": 0.3237,
+        "C": 100000.0,
+        "n_features": 768,
+        "converged": true,
+        "c_selection": "val_sweep_v2",
+        "feature_scaling": "standardized",
+        "c_sweep": {
+          "C_grid": [
+            1e-06,
+            0.0001,
+            0.01,
+            1.0,
+            100.0,
+            10000.0,
+            31622.776601683792,
+            100000.0,
+            316227.7660168379,
+            1000000.0
+          ],
+          "val_top1": [
+            0.1135,
+            0.1885,
+            0.2864,
+            0.3293,
+            0.3285,
+            0.3243,
+            0.3298,
+            0.3301,
+            0.3297,
+            0.33
+          ],
+          "n_val": 10000,
+          "val_fraction": 0.2,
+          "val_seed": 0,
+          "sweep_max_iter": 2000
+        }
+      },
+      {
+        "feature_set": "12 low-level image statistics",
+        "top1": 0.3352,
+        "C": 3.1622776601683795,
+        "n_features": 12,
+        "converged": true,
+        "c_selection": "val_sweep_v2",
+        "feature_scaling": "standardized",
+        "c_sweep": {
+          "C_grid": [
+            1e-06,
+            0.0001,
+            0.01,
+            1.0,
+            3.1622776601683795,
+            10.0,
+            31.622776601683793,
+            100.0,
+            1000.0,
+            10000.0,
+            1000000.0
+          ],
+          "val_top1": [
+            0.2584,
+            0.2987,
+            0.3297,
+            0.3312,
+            0.3314,
+            0.3314,
+            0.3314,
+            0.3314,
+            0.3314,
+            0.3314,
+            0.3314
+          ],
+          "n_val": 10000,
+          "val_fraction": 0.2,
+          "val_seed": 0,
+          "sweep_max_iter": 2000
+        }
+      },
+      {
+        "feature_set": "raw pixels (32 x 32 x 3)",
+        "top1": 0.4169,
+        "C": 0.00031622776601683794,
+        "n_features": 3072,
+        "converged": true,
+        "c_selection": "val_sweep_v2",
+        "feature_scaling": "standardized",
+        "c_sweep": {
+          "C_grid": [
+            1e-06,
+            1e-05,
+            0.0001,
+            0.00031622776601683794,
+            0.001,
+            0.0031622776601683794,
+            0.01,
+            1.0,
+            100.0,
+            10000.0,
+            1000000.0
+          ],
+          "val_top1": [
+            0.3233,
+            0.3878,
+            0.4178,
+            0.428,
+            0.4253,
+            0.4198,
+            0.4085,
+            0.3679,
+            0.3516,
+            0.3543,
+            0.3532
+          ],
+          "n_val": 10000,
+          "val_fraction": 0.2,
+          "val_seed": 0,
+          "sweep_max_iter": 2000
+        }
+      }
+    ],
+    "share_of_collapsed_variance_explained_by_stats": 0.3591575271411751,
+    "spearman_arc_axis_vs_stats_cifar_test": {
+      "luminance": 0.9173140216611402,
+      "RMS contrast": 0.08176505529765055,
+      "saturation": -0.4041594662724413,
+      "colorfulness": -0.06950045338340932,
+      "mean red": 0.8123622495358875,
+      "mean green": 0.8873233026760072,
+      "mean blue": 0.8261239590777842,
+      "red\u2013green balance": -0.07117491764363153,
+      "yellow\u2013blue balance": -0.21505074618687692,
+      "edge density": -0.0382176203381762,
+      "high-frequency power": -0.15326032708460324,
+      "entropy": -0.07167720674077206
+    }
+  },
+  "official_cifar10_probe": {
+    "baseline": {
+      "top1": 0.7799,
+      "n_train": 45000,
+      "n_test": 10000
+    },
+    "collapsed": {
+      "top1": 0.4186,
+      "n_train": 45000,
+      "n_test": 10000
+    }
+  },
+  "plot_stride": 10
+}

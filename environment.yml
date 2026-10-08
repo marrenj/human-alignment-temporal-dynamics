@@ -1,0 +1,18 @@
+name: temporal_perturbations
+
+channels:
+  - conda-forge
+  - defaults
+
+# PyTorch comes from the CUDA 12.1 pip wheels rather than the conda
+# pytorch / pytorch-cuda metapackages, which do not solve reliably on all platforms.
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu121
+      - torch==2.2.1+cu121
+      - torchvision==0.17.1+cu121
+      # torch 2.2.1 was built against NumPy 1.x and crashes under NumPy 2.
+      - numpy>=1.21,<2
+      - -r requirements.txt

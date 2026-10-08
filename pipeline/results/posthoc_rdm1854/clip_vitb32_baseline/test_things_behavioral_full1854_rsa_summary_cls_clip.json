@@ -1,0 +1,1004 @@
+{
+  "dataset": "things",
+  "evaluation_type": "behavioral",
+  "run_name": "clip_vitb32_baseline",
+  "architecture": "CLIP ViT-B/32",
+  "clip_feature": "cls",
+  "preprocessing": "clip",
+  "n_images": 1854,
+  "description": "Post-hoc behavioral alignment over all 1854 THINGS images. RSA: Spearman over upper-tri of model vs SPoSE RDMs. CKA: linear Centered Kernel Alignment between model embeddings and the 66-d SPoSE features (feature-space, no RDM).",
+  "results": [
+    {
+      "epoch": "0",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "0",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.14846129141243625,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "0",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.1639817359537561,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "1",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "1",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.20815339877323663,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "1",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.23964185337495572,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "2",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "2",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.25014988311665093,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "2",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.2781990377672571,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "3",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "3",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.2655055384131136,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "3",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.3053880878552061,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "4",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "4",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.29060445114985967,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "4",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.3406735575400974,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "5",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "5",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.3153038777934624,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "5",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.3654058653672513,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "6",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "6",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.3232682436341844,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "6",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.38653172019352877,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "7",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "7",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.35235349959476975,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "7",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.4166415739264102,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "8",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "8",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.36559388103570145,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "8",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.43584713964971955,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "9",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "9",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.38381596013898295,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "9",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.44871969318343113,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "10",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "10",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.39121118844417446,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "10",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.4714503240567902,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "11",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "11",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.40606729734701175,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "11",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.4849799647262884,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "12",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "12",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.407047000552151,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "12",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.4888143616462075,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "13",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "13",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.40981363231023704,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "13",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.49441630523926716,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "14",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "14",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4153585001151842,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "14",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5051114694221852,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "15",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "15",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4185782839565898,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "15",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5077112937360849,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "16",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "16",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4211584426738908,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "16",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5140166306920972,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "17",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "17",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.42329198919485156,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "17",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5180196969228358,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "18",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "18",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4209566816733936,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "18",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5158247548800319,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "19",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "19",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.42823194352787564,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "19",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5201923255784956,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "20",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "20",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4234479525301444,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "20",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5157144430686611,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "21",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "21",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.42618984291533535,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "21",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5213497455612766,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "22",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "22",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4243814404395831,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "22",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5173975985797324,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "23",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "23",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4220849252538584,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "23",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5188815114936177,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "24",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "24",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.42409048579496944,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "24",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5209127851552215,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "25",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "25",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4237513410439759,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "25",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5192989267255795,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "26",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "26",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.42401616117063606,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "26",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5216144846726988,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "27",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "27",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.42466088638733296,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "27",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5221021634305552,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "28",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "28",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4229202705122343,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "28",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5234368624632106,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "29",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "29",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4222007448519727,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "29",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5229319286311649,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "30",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "30",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4224892394503854,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "30",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5230030672682334,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "31",
+      "run_name": "clip_vitb32_baseline",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "CLIP ViT-B/32",
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "31",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.42269595595567394,
+          "p_value": 0.0,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "31",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.522901362378296,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    }
+  ]
+}

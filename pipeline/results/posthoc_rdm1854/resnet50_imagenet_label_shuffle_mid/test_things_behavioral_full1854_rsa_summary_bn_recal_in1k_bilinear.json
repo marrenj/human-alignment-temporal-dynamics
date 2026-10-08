@@ -1,0 +1,2284 @@
+{
+  "results": [
+    {
+      "epoch": "30",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "30",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.00508232768354983,
+          "p_value": 0.20837916208379162,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "30",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.05348312557337041,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "89",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "89",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4671874033404761,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "89",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5221169659305402,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "31",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "31",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.422282677652447,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "31",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.49056533377241873,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "32",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "32",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4379477045658653,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "32",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.4831741055477817,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "33",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "33",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4359456693408763,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "33",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.48635662124527945,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "34",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "34",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.43121273564504503,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "34",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.4744296800957892,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "35",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "35",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4296985921940875,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "35",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.4825243296767277,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "36",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "36",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.43011002194711767,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "36",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.4885666716567419,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "37",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "37",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4346276283029834,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "37",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.4790821308226854,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "38",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "38",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4364056368187002,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "38",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.4810442824585933,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "39",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "39",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4396051318657933,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "39",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5025501277382229,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "40",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "40",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.42594163692173215,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "40",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.4804425449106312,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "41",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "41",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.43290359042636406,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "41",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.4891045668591327,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "42",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "42",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4384736411861789,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "42",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.4923764409402836,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "43",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "43",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.44277152430146743,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "43",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.4949319335729163,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "44",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "44",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4367400348134789,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "44",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.4980083095600715,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "45",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "45",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4409628859671242,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "45",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5008939027639047,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "46",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "46",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.44170081509674686,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "46",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.49344440979255344,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "47",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "47",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.440097803788818,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "47",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5066044771669351,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "48",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "48",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4440798169181557,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "48",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.4911247515706424,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "49",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "49",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4417938242847032,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "49",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.4917257307933018,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "50",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "50",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.43605534049162253,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "50",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.4931495362857077,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "51",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "51",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4417773382742163,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "51",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5093418378009036,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "52",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "52",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.45597749693189515,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "52",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.507021520100728,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "53",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "53",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4474206169013221,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "53",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5022690456528156,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "54",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "54",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.44818401799198515,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "54",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5101491563799975,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "55",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "55",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.44308911820663327,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "55",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.4946520155685905,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "56",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "56",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4434778751049831,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "56",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5102097002463709,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "57",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "57",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.44708126367423606,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "57",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5035968878079512,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "58",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "58",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4500668546207262,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "58",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5061057261460249,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "59",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "59",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.44759839909666377,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "59",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5124920735444203,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "60",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "60",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4502146060726966,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "60",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5018077330904266,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "61",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "61",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.44547048229577096,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "61",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5041614015130749,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "62",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "62",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.44991277293783327,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "62",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5090198870276305,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "63",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "63",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.45349164840944756,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "63",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5143496334182307,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "64",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "64",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.44448152516680106,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "64",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5099787602014053,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "65",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "65",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.44896242243294915,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "65",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.510040469613518,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "66",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "66",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.45236499930338436,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "66",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5150198968661271,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "67",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "67",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4496120611502041,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "67",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5160027523892864,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "68",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "68",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4549001324725138,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "68",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5199001026927683,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "69",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "69",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.45835382795089,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "69",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5209569671573969,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "70",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "70",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4591963527174297,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "70",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5165919905420385,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "71",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "71",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4534413121726041,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "71",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5168067405380089,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "72",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "72",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.45992277676263055,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "72",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5204124377157878,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "73",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "73",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4541354451711247,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "73",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5144794613558031,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "74",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "74",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.46342582273130284,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "74",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5175109086583386,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "75",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "75",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4653296812799822,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "75",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5242895819892249,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "76",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "76",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4604651225052332,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "76",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.518449025980563,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "77",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "77",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4534528487153032,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "77",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5174112901157025,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "78",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "78",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4631348535862358,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "78",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5220270967950584,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "79",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "79",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.46272903813549027,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "79",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5186944513654871,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "80",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "80",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.46607197025281405,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "80",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5242264563616029,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "81",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "81",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4616993476977936,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "81",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5186283725072216,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "82",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "82",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4668999822039472,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "82",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5219624760027596,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "83",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "83",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4654138161101427,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "83",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5225415496528432,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "84",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "84",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4669666398638808,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "84",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5214581372562059,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "85",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "85",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.46727937480565046,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "85",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.521843417659928,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "86",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "86",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4674309525648471,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "86",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5227428926717939,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "87",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "87",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.46683853628725486,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "87",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5219418357278997,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "88",
+      "run_name": "resnet50_imagenet_label_shuffle_mid",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "88",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.46723355041975834,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "88",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5223259187155119,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    }
+  ]
+}

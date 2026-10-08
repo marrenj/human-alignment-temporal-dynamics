@@ -1,0 +1,343 @@
+{
+  "results": [
+    {
+      "epoch": "10",
+      "run_name": "resnet50_imagenet_label_shuffle_late_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "sub_epoch": true,
+      "parent_epoch": 71,
+      "total_steps": 1250,
+      "step": 10,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "10",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.02445428323191001,
+          "p_value": 0.00039996000399960006,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "10",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.10149138110183203,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "25",
+      "run_name": "resnet50_imagenet_label_shuffle_late_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "sub_epoch": true,
+      "parent_epoch": 71,
+      "total_steps": 1250,
+      "step": 25,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "25",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.04944311226220888,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "25",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.07362135747599785,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "63",
+      "run_name": "resnet50_imagenet_label_shuffle_late_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "sub_epoch": true,
+      "parent_epoch": 71,
+      "total_steps": 1250,
+      "step": 63,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "63",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.3270780840914616,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "63",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.2657802059343607,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "125",
+      "run_name": "resnet50_imagenet_label_shuffle_late_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "sub_epoch": true,
+      "parent_epoch": 71,
+      "total_steps": 1250,
+      "step": 125,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "125",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.37716381588744824,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "125",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.4120512443853669,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "250",
+      "run_name": "resnet50_imagenet_label_shuffle_late_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "sub_epoch": true,
+      "parent_epoch": 71,
+      "total_steps": 1250,
+      "step": 250,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "250",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.4325793719129244,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "250",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.4915263706898073,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "500",
+      "run_name": "resnet50_imagenet_label_shuffle_late_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "sub_epoch": true,
+      "parent_epoch": 71,
+      "total_steps": 1250,
+      "step": 500,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "500",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.45840011999664526,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "500",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5076796321433211,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "1000",
+      "run_name": "resnet50_imagenet_label_shuffle_late_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "sub_epoch": true,
+      "parent_epoch": 71,
+      "total_steps": 1250,
+      "step": 1000,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "1000",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.46800890782391774,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "1000",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5213987667558123,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    },
+    {
+      "epoch": "1250",
+      "run_name": "resnet50_imagenet_label_shuffle_late_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "resnet50_imagenet",
+      "bn_recalibrated": true,
+      "sub_epoch": true,
+      "parent_epoch": 71,
+      "total_steps": 1250,
+      "step": 1250,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "1250",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.46121634826038005,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson",
+          "bn_recalibrated": true,
+          "n_bn_layers": 53,
+          "calib_images": 8192
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "1250",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.5162290993283236,
+          "kernel": "linear",
+          "unbiased": false,
+          "bn_recalibrated": true
+        }
+      }
+    }
+  ],
+  "sub_epoch": true,
+  "parent_epoch": 71,
+  "total_steps": 1250
+}

@@ -1,0 +1,31 @@
+{
+  "epoch": 29,
+  "stimulus_set": "things_fmri_720",
+  "architecture": "CLIP ViT-B/32",
+  "clip_feature": "cls",
+  "preprocessing": "clip",
+  "perturb_type": "image_noise",
+  "phase": "late",
+  "onset_epoch": 28,
+  "run_a": "<runs_root>/clip_vitb32_image_noise_late",
+  "label_a": "clip_vitb32_image_noise_late",
+  "run_b": "<runs_root>/clip_vitb32_baseline",
+  "label_b": "clip_vitb32_baseline",
+  "dataset": "things",
+  "n_stimuli": 720,
+  "rsa": {
+    "model_rdm_distance_metric": "cosine",
+    "pearson": {
+      "rho": 0.9959637522697449,
+      "p_value": 0.0
+    },
+    "spearman": {
+      "rho": 0.9957654953404137,
+      "p_value": 0.0
+    }
+  },
+  "cka": {
+    "unbiased": true,
+    "score": 0.9963837596417063
+  }
+}

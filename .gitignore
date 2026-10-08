@@ -1,0 +1,28 @@
+# Local configuration
+pipeline/paths.yaml
+
+# Checkpoints and training output (live under paths.yaml `runs_root` / `cliphba_runs_root`)
+*.pth
+*.ckpt
+*.safetensors
+lightning_logs/
+events.out.tfevents.*
+wandb/
+
+# Regenerable feature caches
+pipeline/cache/
+
+# Rendered figures (regenerate with pipeline/scripts/visualization/)
+pipeline/figures/*
+!pipeline/figures/.gitkeep
+
+# Python / OS
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+
+# Slurm job logs
+pipeline/slurm/logs/
+pipeline/slurm/cluster.env

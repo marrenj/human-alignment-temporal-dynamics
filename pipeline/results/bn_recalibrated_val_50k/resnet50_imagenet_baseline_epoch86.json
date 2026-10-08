@@ -1,0 +1,22 @@
+{
+  "run_name": "resnet50_imagenet_baseline",
+  "architecture": "resnet50_imagenet",
+  "timm_model": "resnet50",
+  "perturb_type": "none",
+  "timing": "early",
+  "epoch": 86,
+  "n_bn_layers": 53,
+  "val_images": 50000,
+  "val_per_class": 50,
+  "calib_images": 8000,
+  "as_is": {
+    "val_ce_loss": 0.9936486561584472,
+    "val_acc1": 0.77168
+  },
+  "bn_recalibrated": {
+    "val_ce_loss": 1.668039026184082,
+    "val_acc1": 0.7535
+  },
+  "logged_val_acc1": 0.7716599702835083,
+  "checkpoint": "<runs_root>/resnet50_imagenet_baseline/checkpoints/all_epochs/epoch_086.ckpt"
+}

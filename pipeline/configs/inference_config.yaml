@@ -1,0 +1,37 @@
+## ---PATHS--- ##
+img_dir: "paths:things_images"   # paths.yaml key; override via --img_dir
+annotations_file: "./pipeline/data/spose_embedding66d_rescaled_48val_reordered.csv"
+inference_save_dir: "./pipeline/results"
+model_weights_path: "./pipeline/results"   # override via --checkpoint_dir
+
+## ---MODEL PARAMETERS--- ##
+training_mode: finetune
+backbone : ViT-L/14
+vision_layers: 2
+transformer_layers: 1
+rank: 32
+load_hba: true
+
+## ---INFERENCE PARAMETERS--- ##
+dataset: things # which dataset's inference to run (nod, things)
+max_images_per_category: 12
+evaluation_type: behavioral # options: triplet | behavioral | neural | cka
+epoch: 1
+cuda: 0 #(device selector):
+batch_size: 48
+num_workers: 1 # (for THINGS/NOD extraction, defaults to 8)
+
+# ---RSA OPTIONS (used for behavioral/neural alignment)---
+model_rdm_distance_metric: pearson # Either pearson or cosine distance. Generally, use pearson distance when conducting behavioral RSA and cosine distance when conducting neural RSA.
+rsa_similarity_metric: spearman 
+reference_rdm_paths: {
+    "behavioral_rdm": "./pipeline/data/RDM48_triplet.mat"
+}
+reference_rdm_distance_metric: pearson
+
+# ---CKA OPTIONS (used when evaluation_type: cka)---
+# Computes linear CKA between CLIP-HBA last-layer activations and SPoSE
+# embeddings for the 48 inference images (annotations_file above).
+# Set cka_unbiased: true to use the unbiased HSIC estimator (recommended
+# for small N such as N=48).
+cka_unbiased: true

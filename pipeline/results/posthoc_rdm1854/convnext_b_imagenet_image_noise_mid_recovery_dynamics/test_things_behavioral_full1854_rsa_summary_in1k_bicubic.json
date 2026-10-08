@@ -1,0 +1,311 @@
+{
+  "dataset": "things",
+  "evaluation_type": "behavioral",
+  "run_name": "convnext_b_imagenet_image_noise_mid_recovery_dynamics",
+  "architecture": "ConvNeXt-B",
+  "clip_feature": null,
+  "preprocessing": "in1k_bicubic",
+  "n_images": 1854,
+  "description": "Post-hoc behavioral alignment over all 1854 THINGS images. RSA: Spearman over upper-tri of model vs SPoSE RDMs. CKA: linear Centered Kernel Alignment between model embeddings and the 66-d SPoSE features (feature-space, no RDM).",
+  "results": [
+    {
+      "epoch": "10",
+      "run_name": "convnext_b_imagenet_image_noise_mid_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "ConvNeXt-B",
+      "sub_epoch": true,
+      "parent_epoch": 31,
+      "step": 10,
+      "total_steps": 833,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "10",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.07880680418922445,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "10",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.07504874844724117,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "18",
+      "run_name": "convnext_b_imagenet_image_noise_mid_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "ConvNeXt-B",
+      "sub_epoch": true,
+      "parent_epoch": 31,
+      "step": 18,
+      "total_steps": 833,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "18",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.07904577945203337,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "18",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.0751413333041271,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "35",
+      "run_name": "convnext_b_imagenet_image_noise_mid_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "ConvNeXt-B",
+      "sub_epoch": true,
+      "parent_epoch": 31,
+      "step": 35,
+      "total_steps": 833,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "35",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.0795185479253615,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "35",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.07516210264112635,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "66",
+      "run_name": "convnext_b_imagenet_image_noise_mid_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "ConvNeXt-B",
+      "sub_epoch": true,
+      "parent_epoch": 31,
+      "step": 66,
+      "total_steps": 833,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "66",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.07974005352783853,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "66",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.07516803411003405,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "125",
+      "run_name": "convnext_b_imagenet_image_noise_mid_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "ConvNeXt-B",
+      "sub_epoch": true,
+      "parent_epoch": 31,
+      "step": 125,
+      "total_steps": 833,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "125",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.08039301153512222,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "125",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.07583731571354656,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "235",
+      "run_name": "convnext_b_imagenet_image_noise_mid_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "ConvNeXt-B",
+      "sub_epoch": true,
+      "parent_epoch": 31,
+      "step": 235,
+      "total_steps": 833,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "235",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.07626398696061308,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "235",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.07966873446412268,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "442",
+      "run_name": "convnext_b_imagenet_image_noise_mid_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "ConvNeXt-B",
+      "sub_epoch": true,
+      "parent_epoch": 31,
+      "step": 442,
+      "total_steps": 833,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "442",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.09128539945134055,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "442",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.06020080004314956,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "833",
+      "run_name": "convnext_b_imagenet_image_noise_mid_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "ConvNeXt-B",
+      "sub_epoch": true,
+      "parent_epoch": 31,
+      "step": 833,
+      "total_steps": 833,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "833",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.07501002293103426,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "833",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.0473562071507814,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    }
+  ],
+  "sub_epoch": true,
+  "parent_epoch": 31,
+  "total_steps": 833
+}

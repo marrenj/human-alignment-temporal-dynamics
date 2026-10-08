@@ -1,0 +1,130 @@
+{
+  "architecture": "ViT-B/16",
+  "run_name": "vitb16_imagenet_image_noise_late_recovery_dynamics",
+  "is_baseline": null,
+  "perturb_type": null,
+  "phase": null,
+  "epoch": 71066,
+  "checkpoint": "<runs_root>/vitb16_imagenet_image_noise_late_recovery_dynamics/checkpoints/sub_epoch/epoch_071_step_00066.ckpt",
+  "clip_feature": null,
+  "datasets": [
+    "imagenet1k",
+    "imagenet1k_16superclass"
+  ],
+  "datasets_this_run": [
+    "imagenet1k",
+    "imagenet1k_16superclass"
+  ],
+  "solver": "torch",
+  "preprocessing": "in1k_bicubic",
+  "results": {
+    "imagenet1k": {
+      "epoch": "71066",
+      "evaluation_type": "linear_probe",
+      "dataset": "imagenet1k",
+      "score": 0.74466,
+      "metric": "top1_accuracy",
+      "n_train": 100000,
+      "max_train_samples": 100000,
+      "n_test": 50000,
+      "n_features": 768,
+      "n_constant_dims_dropped": 0,
+      "preprocessing": "in1k_bicubic",
+      "c_selection": "val_sweep_v2",
+      "feature_scaling": "standardized",
+      "c_sweep": {
+        "C_grid": [
+          1e-06,
+          0.0001,
+          0.001,
+          0.0031622776601683794,
+          0.01,
+          0.03162277660168379,
+          0.1,
+          1.0,
+          100.0,
+          10000.0,
+          1000000.0
+        ],
+        "val_top1": [
+          0.8053,
+          0.80565,
+          0.8347,
+          0.836,
+          0.8348,
+          0.8306,
+          0.826,
+          0.82045,
+          0.79245,
+          0.79135,
+          0.79135
+        ],
+        "n_val": 20000,
+        "val_fraction": 0.2,
+        "val_seed": 0,
+        "sweep_max_iter": 2000
+      },
+      "solver": "torch",
+      "C": 0.0031622776601683794,
+      "converged": true,
+      "n_iter": 19,
+      "objective": 327.9227618895336,
+      "top5_accuracy": 0.92008,
+      "n_classes": 1000
+    },
+    "imagenet1k_16superclass": {
+      "epoch": "71066",
+      "evaluation_type": "linear_probe",
+      "dataset": "imagenet1k_16superclass",
+      "score": 0.84906,
+      "metric": "top1_accuracy",
+      "n_train": 100000,
+      "max_train_samples": 100000,
+      "n_test": 50000,
+      "n_features": 768,
+      "n_constant_dims_dropped": 0,
+      "preprocessing": "in1k_bicubic",
+      "c_selection": "val_sweep_v2",
+      "feature_scaling": "standardized",
+      "c_sweep": {
+        "C_grid": [
+          1e-06,
+          0.0001,
+          0.001,
+          0.0031622776601683794,
+          0.01,
+          0.03162277660168379,
+          0.1,
+          1.0,
+          100.0,
+          10000.0,
+          1000000.0
+        ],
+        "val_top1": [
+          0.40985,
+          0.80945,
+          0.8684,
+          0.8735,
+          0.8721,
+          0.8697,
+          0.86605,
+          0.85975,
+          0.85625,
+          0.8567,
+          0.8565
+        ],
+        "n_val": 20000,
+        "val_fraction": 0.2,
+        "val_seed": 0,
+        "sweep_max_iter": 2000
+      },
+      "solver": "torch",
+      "C": 0.0031622776601683794,
+      "converged": true,
+      "n_iter": 77,
+      "objective": 123.827439197167,
+      "top5_accuracy": 0.98838,
+      "n_classes": 16
+    }
+  }
+}

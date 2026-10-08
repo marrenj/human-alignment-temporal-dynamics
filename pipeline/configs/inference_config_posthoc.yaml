@@ -1,0 +1,33 @@
+## Post-hoc behavioral RSA config for auditing existing runs (48-image set).
+
+## ---PATHS--- ##
+img_dir: "paths:things_images"
+annotations_file: "./pipeline/data/spose_embedding66d_rescaled_48val_reordered.csv"
+inference_save_dir: "./pipeline/results"
+model_weights_path: "./pipeline/results"   # override via --checkpoint_dir
+
+## ---MODEL PARAMETERS--- ##
+training_mode: finetune
+backbone : ViT-L/14
+vision_layers: 2
+transformer_layers: 1
+rank: 32
+load_hba: true
+
+## ---INFERENCE PARAMETERS--- ##
+dataset: things
+max_images_per_category: 12
+evaluation_type: behavioral
+epoch: 1
+cuda: 0
+batch_size: 48
+num_workers: 1
+
+# ---RSA OPTIONS---
+model_rdm_distance_metric: pearson
+rsa_similarity_metric: spearman
+reference_rdm_paths: {
+    "behavioral_rdm": "./pipeline/data/RDM48_triplet.mat"
+}
+reference_rdm_distance_metric: pearson
+cka_unbiased: true

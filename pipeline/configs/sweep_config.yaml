@@ -1,0 +1,111 @@
+# =============================================================================
+# Central sweep config.
+#
+# architectures[] entries set the CLIP-HBA perturbation grid (perturb_types /
+# perturb_epochs / perturb_lengths / total_epochs / seeds) and name the
+# from-scratch families for `run_full_evaluation.py --arch_name`. Top-level keys
+# (perturb_types, perturb_epochs, ...) only act as fallbacks for any arch entry
+# that doesn't override them.
+# =============================================================================
+
+## ── ARCHITECTURES ────────────────────────────────────────────────────────────
+architectures:
+
+  # ---------- CLIP-HBA (3 seeds) ----------
+  - name: clip_hba_vitl14
+    training_mode: finetune
+    architecture: CLIP-HBA
+    clip_hba_backbone: ViT-L/14
+    vision_layers: 2
+    transformer_layers: 1
+    rank: 32
+    # 125 epochs fixed (early stopping disabled for cross-run consistency).
+    perturb_types:   [image_noise, random_target, label_shuffle, uniform_images]
+    perturb_epochs:
+      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+       14, 19, 24, 29, 34, 39, 44, 49,
+       54, 59, 64, 69, 74, 79, 84, 89, 94, 99]
+    perturb_lengths: [1, 5, 10, 20, 30, 40, 50]
+    total_epochs:    125
+    seeds:           [1, 2, 3]
+    keep_checkpoint_epochs: []   # empty -> keep all per-epoch DoRA ckpts (small)
+
+  # ---------- From-scratch Lightning checkpoints under runs_root ----------
+  # Trained by pipeline/scripts/training/train_from_scratch.py (see
+  # pipeline/configs/scratch_runs.yaml). Only used for run_full_evaluation.py's
+  # `_arch_entry` lookup; model_weights_path/epoch are supplied per invocation.
+  - name: resnet50_lightning
+    training_mode: scratch_lightning
+    architecture: RN50
+    num_classes: 1000
+
+  - name: vitb16_lightning
+    training_mode: scratch_lightning
+    architecture: ViT-B/16
+    num_classes: 1000
+
+  - name: convnext_b_lightning
+    training_mode: scratch_lightning
+    architecture: ConvNeXt-B
+    num_classes: 1000
+
+  - name: clip_vitb32_lightning
+    training_mode: clip_contrastive
+    architecture: ViT-B/32
+
+
+## ── COMPATIBILITY ────────────────────────────────────────────────────────────
+# Constraint: random_target only valid for finetune (continuous-target loss).
+arch_perturb_compat:
+  finetune:         [random_target, label_shuffle, image_noise, uniform_images, none]
+  scratch:          [label_shuffle, image_noise, uniform_images, none]
+  clip_contrastive: [label_shuffle, image_noise, uniform_images, none]
+
+
+## ── EVALUATION SUITES ────────────────────────────────────────────────────────
+# Each suite points at a YAML; `applies_to` filters by training_mode.
+# `run_full_evaluation.py` iterates eval_epochs × applicable suites for each ckpt.
+eval_suites:
+  behavioral_rsa:
+    config: pipeline/configs/inference_config.yaml
+    applies_to: [finetune, scratch, clip_contrastive]
+
+  brain_rsa_nod:
+    config: pipeline/configs/brain_rsa_nod.yaml
+    applies_to: [finetune, scratch, clip_contrastive]
+
+  brain_rsa_things:
+    config: pipeline/configs/brain_rsa_things.yaml
+    applies_to: [finetune, scratch, clip_contrastive]
+
+  # Layer-reweighted RSA (FR-RSA) for the non-CLIP-HBA architectures. Reweights
+  # per-layer RDMs to predict each ROI RDM. CLIP-HBA (finetune) is excluded — it
+  # already has its own 66-d neural suite (brain_rsa_*).
+  brain_frrsa_nod:
+    config: pipeline/configs/brain_frrsa_nod.yaml
+    applies_to: [scratch, scratch_lightning, clip_contrastive]
+
+  brain_frrsa_things:
+    config: pipeline/configs/brain_frrsa_things.yaml
+    applies_to: [scratch, scratch_lightning, clip_contrastive]
+
+  imagenet_val:
+    config: pipeline/configs/imagenet_val.yaml
+    applies_to: [scratch]
+
+  linear_probe:
+    config: pipeline/configs/linear_probe.yaml
+    applies_to: [scratch]
+
+
+## ── FALLBACK DEFAULTS ────────────────────────────────────────────────────────
+# Only used when an architectures[] entry doesn't override the corresponding
+# key. The per-arch entries above all override these, so these are documentation
+# of the previous behavior and a safety net for ad-hoc adds.
+perturb_types:    [random_target, label_shuffle, image_noise, uniform_images]
+perturb_epochs:   [0, 4, 8, 14, 19, 29, 39, 49, 59, 69, 79, 89, 99]
+perturb_lengths:  [1, 5, 10, 20, 30, 40, 50]
+total_epochs:     100
+seeds:            [1, 2, 3]
+eval_epochs:      [1, 2, 5, 10, 20, 50, 99]
+keep_checkpoint_epochs: [1, 2, 5, 10, 20, 50, 99]

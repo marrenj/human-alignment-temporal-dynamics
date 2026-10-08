@@ -1,0 +1,31 @@
+{
+  "epoch": 71,
+  "stimulus_set": "things_fmri_720",
+  "architecture": "ConvNeXt-B",
+  "clip_feature": null,
+  "preprocessing": "in1k_bicubic",
+  "perturb_type": "image_noise",
+  "phase": "late",
+  "onset_epoch": 70,
+  "run_a": "<runs_root>/convnext_b_imagenet_image_noise_late",
+  "label_a": "convnext_b_imagenet_image_noise_late",
+  "run_b": "<runs_root>/convnext_b_imagenet_baseline",
+  "label_b": "convnext_b_imagenet_baseline",
+  "dataset": "things",
+  "n_stimuli": 720,
+  "rsa": {
+    "model_rdm_distance_metric": "cosine",
+    "pearson": {
+      "rho": 0.9536998271942139,
+      "p_value": 0.0
+    },
+    "spearman": {
+      "rho": 0.8866320220331965,
+      "p_value": 0.0
+    }
+  },
+  "cka": {
+    "unbiased": true,
+    "score": 0.9628804654258564
+  }
+}

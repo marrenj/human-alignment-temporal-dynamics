@@ -1,0 +1,27 @@
+## Post-hoc behavioral RSA over ALL 1854 THINGS images.
+## Like inference_config_posthoc.yaml, but the eval runs the full 1854-image
+## set and the target RDM is built from the 66-d human SPoSE embeddings
+## (no precomputed reference .mat — see run_behavioral_rsa.py).
+
+## ---PATHS--- ##
+img_dir: "paths:things_images"
+annotations_file: "./pipeline/data/spose_embedding66d_rescaled.csv"   # 1854 rows
+inference_save_dir: "./pipeline/results/posthoc_rdm1854"
+
+## ---MODEL PARAMETERS--- ##
+training_mode: finetune
+
+## ---INFERENCE PARAMETERS--- ##
+dataset: things
+max_images_per_category: none
+evaluation_type: behavioral
+cuda: 0
+batch_size: 256
+num_workers: 4
+
+## ---RSA OPTIONS--- ##
+# Model RDM and SPoSE target RDM both use Pearson distance (1 - corrcoef),
+# matching trainer.compute_behavioral_rsa. RSA is Spearman over the upper tri.
+model_rdm_distance_metric: pearson
+rsa_similarity_metric: spearman
+reference_rdm_distance_metric: pearson

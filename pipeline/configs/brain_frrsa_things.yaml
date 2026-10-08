@@ -1,0 +1,72 @@
+## ---PATHS--- ##
+# Concept-organized THINGS image dir (img_dir/<concept>/<stimulus>).
+img_dir: "paths:things_fmri_images"
+annotations_file: "./pipeline/data/things_fmri/things_fmri_annotations.csv"
+inference_save_dir: "./pipeline/results"
+model_weights_path: "./pipeline/results"
+
+## ---MODEL PARAMETERS--- ##
+# Placeholders; run_full_evaluation.py injects the real architecture / training_mode
+# / model_weights_path via --set for each non-CLIP-HBA run.
+architecture: RN50
+training_mode: scratch
+num_classes: 1000
+pretrained: false
+
+## ---INFERENCE PARAMETERS--- ##
+dataset: things
+# ThingsFMRIDataset runs every stimulus (12 per concept); features are averaged
+# to the 720-concept alphabetical order the reference RDMs align to.
+max_images_per_category: null
+evaluation_type: frrsa
+cuda: 0
+batch_size: 128
+num_workers: 4
+
+## ---RSA OPTIONS--- ##
+model_rdm_distance_metric: cosine
+rsa_similarity_metric: spearman
+reference_rdm_distance_metric: pearson
+
+## ---FR-RSA OPTIONS--- ##
+# Layer-reweighted RSA. Per-layer feature vectors: conv layers flattened (spatial
+# preserved), transformer blocks -> CLS token.
+frrsa:
+  scoring: insample               # 'insample' (standard, fast) | 'both' (adds depth-fair nested-CV cv_score, ~5-6x slower)
+  normalize_layers: l2            # per-layer RDM column norm (l2 | rank | zscore | none)
+  n_inner_folds: 5                # inner leave-conditions-out folds for ridge-alpha selection
+  n_outer_folds: 5                # outer folds for the nested cv_score (only used when scoring=both)
+  n_jobs: 8                       # parallel per-ROI fits across CPU cores (1 = serial); bump to your core count
+  layer_rdm_distance_metric: cosine
+  rdm_on_gpu: false               # compute per-layer RDMs on GPU (faster, more VRAM)
+  seed: 42
+
+# 27 THINGS-fMRI ROIs (Hebart et al. 2023), subject-averaged 720-concept RDMs.
+reference_rdm_paths:
+  lEBA: "./pipeline/data/things_fmri/reference_rdms/lEBA_avg_rdm_vector.npy"
+  rEBA: "./pipeline/data/things_fmri/reference_rdms/rEBA_avg_rdm_vector.npy"
+  lFFA: "./pipeline/data/things_fmri/reference_rdms/lFFA_avg_rdm_vector.npy"
+  rFFA: "./pipeline/data/things_fmri/reference_rdms/rFFA_avg_rdm_vector.npy"
+  lOFA: "./pipeline/data/things_fmri/reference_rdms/lOFA_avg_rdm_vector.npy"
+  rOFA: "./pipeline/data/things_fmri/reference_rdms/rOFA_avg_rdm_vector.npy"
+  lLOC: "./pipeline/data/things_fmri/reference_rdms/lLOC_avg_rdm_vector.npy"
+  rLOC: "./pipeline/data/things_fmri/reference_rdms/rLOC_avg_rdm_vector.npy"
+  LOC: "./pipeline/data/things_fmri/reference_rdms/LOC_avg_rdm_vector.npy"
+  lPPA: "./pipeline/data/things_fmri/reference_rdms/lPPA_avg_rdm_vector.npy"
+  rPPA: "./pipeline/data/things_fmri/reference_rdms/rPPA_avg_rdm_vector.npy"
+  lRSC: "./pipeline/data/things_fmri/reference_rdms/lRSC_avg_rdm_vector.npy"
+  rRSC: "./pipeline/data/things_fmri/reference_rdms/rRSC_avg_rdm_vector.npy"
+  lTOS: "./pipeline/data/things_fmri/reference_rdms/lTOS_avg_rdm_vector.npy"
+  rTOS: "./pipeline/data/things_fmri/reference_rdms/rTOS_avg_rdm_vector.npy"
+  va-1: "./pipeline/data/things_fmri/reference_rdms/va-1_avg_rdm_vector.npy"
+  va-2: "./pipeline/data/things_fmri/reference_rdms/va-2_avg_rdm_vector.npy"
+  va-3: "./pipeline/data/things_fmri/reference_rdms/va-3_avg_rdm_vector.npy"
+  va-4: "./pipeline/data/things_fmri/reference_rdms/va-4_avg_rdm_vector.npy"
+  va-5: "./pipeline/data/things_fmri/reference_rdms/va-5_avg_rdm_vector.npy"
+  va-6: "./pipeline/data/things_fmri/reference_rdms/va-6_avg_rdm_vector.npy"
+  va-7: "./pipeline/data/things_fmri/reference_rdms/va-7_avg_rdm_vector.npy"
+  va-8: "./pipeline/data/things_fmri/reference_rdms/va-8_avg_rdm_vector.npy"
+  va-9: "./pipeline/data/things_fmri/reference_rdms/va-9_avg_rdm_vector.npy"
+  va-10: "./pipeline/data/things_fmri/reference_rdms/va-10_avg_rdm_vector.npy"
+  va-11: "./pipeline/data/things_fmri/reference_rdms/va-11_avg_rdm_vector.npy"
+  va-12: "./pipeline/data/things_fmri/reference_rdms/va-12_avg_rdm_vector.npy"

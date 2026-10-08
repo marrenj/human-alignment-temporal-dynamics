@@ -1,0 +1,54 @@
+{
+  "architecture": "CLIP ViT-B/32",
+  "run_name": "clip_vitb32_image_noise_early",
+  "checkpoint": "<runs_root>/clip_vitb32_image_noise_early/checkpoints/all_epochs/epoch_010.ckpt",
+  "config_preset": "declip_yfcc15m_litdata_vitb32",
+  "clip_feature": "cls",
+  "evaluation_type": "imagenet_linear_probe",
+  "train_dataset": "imagenet1k_train",
+  "n_features": 768,
+  "n_constant_dims_dropped": 0,
+  "c_selection": "val_sweep_v2",
+  "feature_scaling": "standardized",
+  "c_sweep": {
+    "C_grid": [
+      1e-06,
+      0.0001,
+      0.01,
+      1.0,
+      100.0,
+      1000.0,
+      3162.2776601683795,
+      10000.0,
+      31622.776601683792,
+      100000.0,
+      1000000.0
+    ],
+    "val_top1": [
+      0.012480779287682353,
+      0.02425127032322018,
+      0.05132027755879392,
+      0.0805747871086585,
+      0.08707275381096966,
+      0.08728349867699056,
+      0.08720544502290875,
+      0.08753717305275646,
+      0.08706885112826557,
+      0.08688932772387739,
+      0.08669809627137695
+    ],
+    "n_val": 256234,
+    "val_fraction": 0.2,
+    "sweep_max_iter": 2000
+  },
+  "C": 10000.0,
+  "n_iter": 1577,
+  "converged": true,
+  "solver": "torch",
+  "n_classes": 1000,
+  "imagenet_val": {
+    "top1_accuracy": 0.07962,
+    "top5_accuracy": 0.19378,
+    "n_test": 50000
+  }
+}

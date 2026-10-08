@@ -1,0 +1,311 @@
+{
+  "dataset": "things",
+  "evaluation_type": "behavioral",
+  "run_name": "vitb16_imagenet_label_shuffle_late_recovery_dynamics",
+  "architecture": "ViT-B/16",
+  "clip_feature": null,
+  "preprocessing": "in1k_bicubic",
+  "n_images": 1854,
+  "description": "Post-hoc behavioral alignment over all 1854 THINGS images. RSA: Spearman over upper-tri of model vs SPoSE RDMs. CKA: linear Centered Kernel Alignment between model embeddings and the 66-d SPoSE features (feature-space, no RDM).",
+  "results": [
+    {
+      "epoch": "10",
+      "run_name": "vitb16_imagenet_label_shuffle_late_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "ViT-B/16",
+      "sub_epoch": true,
+      "parent_epoch": 71,
+      "step": 10,
+      "total_steps": 833,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "10",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.14070917022534016,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "10",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.20243738129439073,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "18",
+      "run_name": "vitb16_imagenet_label_shuffle_late_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "ViT-B/16",
+      "sub_epoch": true,
+      "parent_epoch": 71,
+      "step": 18,
+      "total_steps": 833,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "18",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.17942087789447023,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "18",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.27386175489660236,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "35",
+      "run_name": "vitb16_imagenet_label_shuffle_late_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "ViT-B/16",
+      "sub_epoch": true,
+      "parent_epoch": 71,
+      "step": 35,
+      "total_steps": 833,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "35",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.2288335978832008,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "35",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.34836718152449253,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "66",
+      "run_name": "vitb16_imagenet_label_shuffle_late_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "ViT-B/16",
+      "sub_epoch": true,
+      "parent_epoch": 71,
+      "step": 66,
+      "total_steps": 833,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "66",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.23427248627418673,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "66",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.3627835362414481,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "125",
+      "run_name": "vitb16_imagenet_label_shuffle_late_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "ViT-B/16",
+      "sub_epoch": true,
+      "parent_epoch": 71,
+      "step": 125,
+      "total_steps": 833,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "125",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.22455930221030154,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "125",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.34686986258823765,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "235",
+      "run_name": "vitb16_imagenet_label_shuffle_late_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "ViT-B/16",
+      "sub_epoch": true,
+      "parent_epoch": 71,
+      "step": 235,
+      "total_steps": 833,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "235",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.23514245209038184,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "235",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.34510950984278216,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "442",
+      "run_name": "vitb16_imagenet_label_shuffle_late_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "ViT-B/16",
+      "sub_epoch": true,
+      "parent_epoch": 71,
+      "step": 442,
+      "total_steps": 833,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "442",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.22504835503315598,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "442",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.33926540889819057,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    },
+    {
+      "epoch": "833",
+      "run_name": "vitb16_imagenet_label_shuffle_late_recovery_dynamics",
+      "dataset": "things",
+      "evaluation_type": "behavioral",
+      "architecture": "ViT-B/16",
+      "sub_epoch": true,
+      "parent_epoch": 71,
+      "step": 833,
+      "total_steps": 833,
+      "rsa_results": {
+        "behavioral_rdm": {
+          "epoch": "833",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_rdm_name": "spose_1854",
+          "score": 0.22317825202162492,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "permutation",
+          "n_permutations": 10000,
+          "rsa_similarity_metric": "spearman",
+          "model_rdm_distance_metric": "pearson",
+          "reference_rdm_distance_metric": "pearson"
+        }
+      },
+      "cka_results": {
+        "behavioral_cka": {
+          "epoch": "833",
+          "evaluation_type": "behavioral",
+          "dataset": "things",
+          "reference_name": "spose_1854",
+          "score": 0.33485725963233964,
+          "kernel": "linear",
+          "unbiased": false
+        }
+      }
+    }
+  ],
+  "sub_epoch": true,
+  "parent_epoch": 71,
+  "total_steps": 833
+}

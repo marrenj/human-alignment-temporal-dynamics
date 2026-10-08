@@ -1,0 +1,84 @@
+{
+  "run_name": "resnet50_imagenet_image_noise_late_recovery_dynamics",
+  "architecture": "resnet50",
+  "timm_model": "resnet50",
+  "perturb_type": "image_noise",
+  "phase": "late",
+  "onset_epoch": 70,
+  "has_bn": true,
+  "val_per_class": 10,
+  "steps": [
+    {
+      "epoch": 71,
+      "step": 10,
+      "val_ce_loss_raw": 4.500713999176026,
+      "val_acc1_raw": 0.3898,
+      "val_ce_loss": 1.5042300392150878,
+      "val_acc1": 0.6961,
+      "checkpoint": "<runs_root>/resnet50_imagenet_image_noise_late_recovery_dynamics/checkpoints/sub_epoch/epoch_071_step_00010.ckpt"
+    },
+    {
+      "epoch": 71,
+      "step": 25,
+      "val_ce_loss_raw": 1.531081941986084,
+      "val_acc1_raw": 0.6819,
+      "val_ce_loss": 1.756101382446289,
+      "val_acc1": 0.7074,
+      "checkpoint": "<runs_root>/resnet50_imagenet_image_noise_late_recovery_dynamics/checkpoints/sub_epoch/epoch_071_step_00025.ckpt"
+    },
+    {
+      "epoch": 71,
+      "step": 63,
+      "val_ce_loss_raw": 1.2449296543121338,
+      "val_acc1_raw": 0.7167,
+      "val_ce_loss": 1.7128371368408204,
+      "val_acc1": 0.7145,
+      "checkpoint": "<runs_root>/resnet50_imagenet_image_noise_late_recovery_dynamics/checkpoints/sub_epoch/epoch_071_step_00063.ckpt"
+    },
+    {
+      "epoch": 71,
+      "step": 125,
+      "val_ce_loss_raw": 1.2029807209014893,
+      "val_acc1_raw": 0.7276,
+      "val_ce_loss": 1.721596226119995,
+      "val_acc1": 0.7222,
+      "checkpoint": "<runs_root>/resnet50_imagenet_image_noise_late_recovery_dynamics/checkpoints/sub_epoch/epoch_071_step_00125.ckpt"
+    },
+    {
+      "epoch": 71,
+      "step": 250,
+      "val_ce_loss_raw": 1.2166885440826416,
+      "val_acc1_raw": 0.7223,
+      "val_ce_loss": 1.7060879829406739,
+      "val_acc1": 0.7198,
+      "checkpoint": "<runs_root>/resnet50_imagenet_image_noise_late_recovery_dynamics/checkpoints/sub_epoch/epoch_071_step_00250.ckpt"
+    },
+    {
+      "epoch": 71,
+      "step": 500,
+      "val_ce_loss_raw": 1.1879502653121947,
+      "val_acc1_raw": 0.7252,
+      "val_ce_loss": 1.7211251983642577,
+      "val_acc1": 0.7257,
+      "checkpoint": "<runs_root>/resnet50_imagenet_image_noise_late_recovery_dynamics/checkpoints/sub_epoch/epoch_071_step_00500.ckpt"
+    },
+    {
+      "epoch": 71,
+      "step": 1000,
+      "val_ce_loss_raw": 1.2181577980041505,
+      "val_acc1_raw": 0.7197,
+      "val_ce_loss": 1.676980041885376,
+      "val_acc1": 0.7281,
+      "checkpoint": "<runs_root>/resnet50_imagenet_image_noise_late_recovery_dynamics/checkpoints/sub_epoch/epoch_071_step_01000.ckpt"
+    },
+    {
+      "epoch": 71,
+      "step": 1250,
+      "val_ce_loss_raw": 1.2260758518218995,
+      "val_acc1_raw": 0.7237,
+      "val_ce_loss": 1.7066894538879394,
+      "val_acc1": 0.7269,
+      "checkpoint": "<runs_root>/resnet50_imagenet_image_noise_late_recovery_dynamics/checkpoints/sub_epoch/epoch_071_step_01250.ckpt"
+    }
+  ]
+}

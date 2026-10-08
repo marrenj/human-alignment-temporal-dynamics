@@ -1,0 +1,74 @@
+{
+  "architecture": "CLIP ViT-B/32",
+  "run_name": "clip_vitb32_uniform_images_early",
+  "is_baseline": null,
+  "perturb_type": null,
+  "phase": null,
+  "epoch": 14,
+  "checkpoint": "<runs_root>/clip_vitb32_uniform_images_early/checkpoints/all_epochs/epoch_014.ckpt",
+  "clip_feature": "cls",
+  "datasets": [
+    "vtab/cifar10"
+  ],
+  "datasets_this_run": [
+    "vtab/cifar10"
+  ],
+  "solver": "torch",
+  "preprocessing": "clip",
+  "results": {
+    "vtab/cifar10": {
+      "epoch": "14",
+      "evaluation_type": "linear_probe",
+      "dataset": "vtab/cifar10",
+      "score": 0.4358,
+      "metric": "top1_accuracy",
+      "n_train": 45000,
+      "max_train_samples": null,
+      "n_test": 10000,
+      "n_features": 768,
+      "n_constant_dims_dropped": 0,
+      "preprocessing": "clip",
+      "c_selection": "val_sweep_v2",
+      "feature_scaling": "standardized",
+      "c_sweep": {
+        "C_grid": [
+          1e-06,
+          0.0001,
+          0.01,
+          1.0,
+          100.0,
+          1000.0,
+          3162.2776601683795,
+          10000.0,
+          31622.776601683792,
+          100000.0,
+          1000000.0
+        ],
+        "val_top1": [
+          0.2578888888888889,
+          0.30744444444444446,
+          0.36766666666666664,
+          0.41744444444444445,
+          0.41988888888888887,
+          0.4191111111111111,
+          0.4211111111111111,
+          0.4221111111111111,
+          0.4206666666666667,
+          0.4202222222222222,
+          0.42088888888888887
+        ],
+        "n_val": 9000,
+        "val_fraction": 0.2,
+        "val_seed": 0,
+        "sweep_max_iter": 2000
+      },
+      "solver": "torch",
+      "C": 10000.0,
+      "converged": true,
+      "n_iter": 12212,
+      "objective": 660740706.0204859,
+      "top5_accuracy": 0.8965,
+      "n_classes": 10
+    }
+  }
+}

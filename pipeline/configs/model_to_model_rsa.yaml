@@ -1,0 +1,32 @@
+## ---STIMULUS SET--- ##
+# Tags output filenames/JSON so this config's results don't collide with
+# another stimulus set's (e.g. model_to_model_rsa_behavioral48.yaml).
+stimulus_set: things_fmri_720
+
+## ---PATHS--- ##
+# Concept-organized THINGS-fMRI image dir (img_dir/<concept>/<stimulus>), 720
+# concepts, 12 exemplars each (8640 images total) -- richer stimulus set than
+# the 48-image behavioral set, so RSA/CKA estimates are less noisy. Override
+# with --img_dir.
+img_dir: "paths:things_fmri_images"
+annotations_file: "./pipeline/data/things_fmri/things_fmri_annotations.csv"
+
+## ---MODEL PARAMETERS--- ##
+backbone: ViT-L/14
+vision_layers: 2
+transformer_layers: 1
+rank: 32
+
+## ---INFERENCE PARAMETERS--- ##
+dataset: things
+max_images_per_category: null
+batch_size: 128
+num_workers: 4
+
+## ---COMPARISON OPTIONS--- ##
+# RSA compares the two models' RDMs. Both Pearson and Spearman are always
+# computed (see run_model_to_model_rsa.py docstring) -- no metric to pick here.
+model_rdm_distance_metric: cosine
+# CKA compares the raw (concept-averaged) embeddings directly (sensitive to
+# affine differences in representational geometry that RSA is blind to).
+cka_unbiased: true

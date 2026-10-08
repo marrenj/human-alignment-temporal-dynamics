@@ -1,0 +1,22 @@
+{
+  "run_name": "vitb16_imagenet_image_noise_mid",
+  "architecture": "vitb16_imagenet",
+  "timm_model": "vit_base_patch16_224",
+  "perturb_type": "image_noise",
+  "timing": "mid",
+  "epoch": 30,
+  "n_bn_layers": 0,
+  "val_images": 10000,
+  "val_per_class": 10,
+  "calib_images": 8000,
+  "as_is": {
+    "val_ce_loss": 6.8003520606994625,
+    "val_acc1": 0.0145
+  },
+  "bn_recalibrated": {
+    "val_ce_loss": 6.8003520606994625,
+    "val_acc1": 0.0145
+  },
+  "logged_val_acc1": 0.013180000707507133,
+  "checkpoint": "<runs_root>/vitb16_imagenet_image_noise_mid/checkpoints/all_epochs/epoch_030.ckpt"
+}

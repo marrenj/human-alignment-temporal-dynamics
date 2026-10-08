@@ -1,0 +1,22 @@
+{
+  "run_name": "vitb16_imagenet_uniform_images_early",
+  "architecture": "vitb16_imagenet",
+  "timm_model": "vit_base_patch16_224",
+  "perturb_type": "uniform_images",
+  "timing": "early",
+  "epoch": 5,
+  "n_bn_layers": 0,
+  "val_images": 10000,
+  "val_per_class": 10,
+  "calib_images": 8000,
+  "as_is": {
+    "val_ce_loss": 6.637844459533691,
+    "val_acc1": 0.018
+  },
+  "bn_recalibrated": {
+    "val_ce_loss": 6.637844459533691,
+    "val_acc1": 0.018
+  },
+  "logged_val_acc1": 0.016759999096393585,
+  "checkpoint": "<runs_root>/vitb16_imagenet_uniform_images_early/checkpoints/all_epochs/epoch_005.ckpt"
+}

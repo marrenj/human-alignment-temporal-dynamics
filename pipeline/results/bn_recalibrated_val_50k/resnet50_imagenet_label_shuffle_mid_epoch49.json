@@ -1,0 +1,22 @@
+{
+  "run_name": "resnet50_imagenet_label_shuffle_mid",
+  "architecture": "resnet50_imagenet",
+  "timm_model": "resnet50",
+  "perturb_type": "label_shuffle",
+  "timing": "mid",
+  "epoch": 49,
+  "n_bn_layers": 53,
+  "val_images": 50000,
+  "val_per_class": 50,
+  "calib_images": 8000,
+  "as_is": {
+    "val_ce_loss": 1.644229112930298,
+    "val_acc1": 0.631
+  },
+  "bn_recalibrated": {
+    "val_ce_loss": 1.9136618383789064,
+    "val_acc1": 0.66578
+  },
+  "logged_val_acc1": 0.6309800148010254,
+  "checkpoint": "<runs_root>/resnet50_imagenet_label_shuffle_mid/checkpoints/all_epochs/epoch_049.ckpt"
+}

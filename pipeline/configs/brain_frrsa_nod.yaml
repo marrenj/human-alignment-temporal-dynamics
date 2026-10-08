@@ -1,0 +1,59 @@
+## ---PATHS--- ##
+img_dir: "paths:nod_images"
+annotations_file: "./pipeline/data/nod/nod_images.csv"
+inference_save_dir: "./pipeline/results"
+model_weights_path: "./pipeline/results"
+expected_filenames_txt: "./pipeline/data/nod/filenames.txt"
+
+## ---MODEL PARAMETERS--- ##
+# Placeholders; run_full_evaluation.py injects the real architecture / training_mode
+# / model_weights_path via --set for each non-CLIP-HBA run.
+architecture: RN50
+training_mode: scratch
+num_classes: 1000
+pretrained: false
+
+## ---INFERENCE PARAMETERS--- ##
+dataset: nod
+# One image per synset -> 1000 conditions in alphabetical synset order, matching
+# the NOD reference RDMs (built from filenames.txt). No exemplar averaging, so
+# spatial structure in the flattened conv features is fully preserved.
+max_images_per_category: 1
+evaluation_type: frrsa
+cuda: 0
+batch_size: 128
+num_workers: 4
+
+## ---RSA OPTIONS--- ##
+model_rdm_distance_metric: cosine
+rsa_similarity_metric: spearman
+reference_rdm_distance_metric: pearson
+
+## ---FR-RSA OPTIONS--- ##
+# Layer-reweighted RSA. Per-layer feature vectors: conv layers flattened (spatial
+# preserved), transformer blocks -> CLS token.
+frrsa:
+  scoring: insample               # 'insample' (standard, fast) | 'both' (adds depth-fair nested-CV cv_score, ~5-6x slower)
+  normalize_layers: l2            # per-layer RDM column norm (l2 | rank | zscore | none)
+  n_inner_folds: 5                # inner leave-conditions-out folds for ridge-alpha selection
+  n_outer_folds: 5                # outer folds for the nested cv_score (only used when scoring=both)
+  n_jobs: 8                       # parallel per-ROI fits across CPU cores (1 = serial); bump to your core count
+  layer_rdm_distance_metric: cosine
+  rdm_on_gpu: false               # compute per-layer RDMs on GPU (faster, more VRAM)
+  seed: 42
+
+reference_rdm_paths:
+  FFC: "./pipeline/data/nod/reference_rdms/FFC_avg_rdm_vector.npy"
+  LO1: "./pipeline/data/nod/reference_rdms/LO1_avg_rdm_vector.npy"
+  LO2: "./pipeline/data/nod/reference_rdms/LO2_avg_rdm_vector.npy"
+  LO3: "./pipeline/data/nod/reference_rdms/LO3_avg_rdm_vector.npy"
+  PIT: "./pipeline/data/nod/reference_rdms/PIT_avg_rdm_vector.npy"
+  V1: "./pipeline/data/nod/reference_rdms/V1_avg_rdm_vector.npy"
+  V2: "./pipeline/data/nod/reference_rdms/V2_avg_rdm_vector.npy"
+  V3: "./pipeline/data/nod/reference_rdms/V3_avg_rdm_vector.npy"
+  V4: "./pipeline/data/nod/reference_rdms/V4_avg_rdm_vector.npy"
+  V8: "./pipeline/data/nod/reference_rdms/V8_avg_rdm_vector.npy"
+  VMV1: "./pipeline/data/nod/reference_rdms/VMV1_avg_rdm_vector.npy"
+  VMV2: "./pipeline/data/nod/reference_rdms/VMV2_avg_rdm_vector.npy"
+  VMV3: "./pipeline/data/nod/reference_rdms/VMV3_avg_rdm_vector.npy"
+  VVC: "./pipeline/data/nod/reference_rdms/VVC_avg_rdm_vector.npy"

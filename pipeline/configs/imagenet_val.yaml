@@ -1,0 +1,17 @@
+## ---PATHS--- ##
+img_dir: "paths:imagenet_root"   # override via --img_dir
+inference_save_dir: "./pipeline/results"
+model_weights_path: "./pipeline/results"
+
+## ---MODEL PARAMETERS--- ##
+architecture: RN50
+pretrained: false
+num_classes: 1000
+
+## ---INFERENCE PARAMETERS--- ##
+dataset: imagenet
+evaluation_type: imagenet_val
+training_mode: scratch
+cuda: 0
+batch_size: 256
+num_workers: 8

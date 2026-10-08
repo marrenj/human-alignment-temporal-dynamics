@@ -1,0 +1,84 @@
+{
+  "run_name": "resnet50_imagenet_label_shuffle_early_recovery_dynamics",
+  "architecture": "resnet50",
+  "timm_model": "resnet50",
+  "perturb_type": "label_shuffle",
+  "phase": "early",
+  "onset_epoch": 5,
+  "has_bn": true,
+  "val_per_class": 10,
+  "steps": [
+    {
+      "epoch": 6,
+      "step": 10,
+      "val_ce_loss_raw": 6.907620859527588,
+      "val_acc1_raw": 0.0007,
+      "val_ce_loss": 6.9076259887695315,
+      "val_acc1": 0.001,
+      "checkpoint": "<runs_root>/resnet50_imagenet_label_shuffle_early_recovery_dynamics/checkpoints/sub_epoch/epoch_006_step_00010.ckpt"
+    },
+    {
+      "epoch": 6,
+      "step": 25,
+      "val_ce_loss_raw": 6.900128127288818,
+      "val_acc1_raw": 0.0023,
+      "val_ce_loss": 6.899681620025635,
+      "val_acc1": 0.0018,
+      "checkpoint": "<runs_root>/resnet50_imagenet_label_shuffle_early_recovery_dynamics/checkpoints/sub_epoch/epoch_006_step_00025.ckpt"
+    },
+    {
+      "epoch": 6,
+      "step": 63,
+      "val_ce_loss_raw": 6.314001092529297,
+      "val_acc1_raw": 0.0257,
+      "val_ce_loss": 5.670803451538086,
+      "val_acc1": 0.0652,
+      "checkpoint": "<runs_root>/resnet50_imagenet_label_shuffle_early_recovery_dynamics/checkpoints/sub_epoch/epoch_006_step_00063.ckpt"
+    },
+    {
+      "epoch": 6,
+      "step": 125,
+      "val_ce_loss_raw": 4.18044688796997,
+      "val_acc1_raw": 0.1958,
+      "val_ce_loss": 3.1658439331054686,
+      "val_acc1": 0.3528,
+      "checkpoint": "<runs_root>/resnet50_imagenet_label_shuffle_early_recovery_dynamics/checkpoints/sub_epoch/epoch_006_step_00125.ckpt"
+    },
+    {
+      "epoch": 6,
+      "step": 250,
+      "val_ce_loss_raw": 3.4723002639770506,
+      "val_acc1_raw": 0.2971,
+      "val_ce_loss": 2.9483672843933104,
+      "val_acc1": 0.3901,
+      "checkpoint": "<runs_root>/resnet50_imagenet_label_shuffle_early_recovery_dynamics/checkpoints/sub_epoch/epoch_006_step_00250.ckpt"
+    },
+    {
+      "epoch": 6,
+      "step": 500,
+      "val_ce_loss_raw": 3.121270203399658,
+      "val_acc1_raw": 0.3508,
+      "val_ce_loss": 2.797591743850708,
+      "val_acc1": 0.425,
+      "checkpoint": "<runs_root>/resnet50_imagenet_label_shuffle_early_recovery_dynamics/checkpoints/sub_epoch/epoch_006_step_00500.ckpt"
+    },
+    {
+      "epoch": 6,
+      "step": 1000,
+      "val_ce_loss_raw": 2.8750605949401855,
+      "val_acc1_raw": 0.3921,
+      "val_ce_loss": 2.5700725299835203,
+      "val_acc1": 0.4732,
+      "checkpoint": "<runs_root>/resnet50_imagenet_label_shuffle_early_recovery_dynamics/checkpoints/sub_epoch/epoch_006_step_01000.ckpt"
+    },
+    {
+      "epoch": 6,
+      "step": 1250,
+      "val_ce_loss_raw": 2.6297435653686523,
+      "val_acc1_raw": 0.4318,
+      "val_ce_loss": 2.5506267349243164,
+      "val_acc1": 0.4841,
+      "checkpoint": "<runs_root>/resnet50_imagenet_label_shuffle_early_recovery_dynamics/checkpoints/sub_epoch/epoch_006_step_01250.ckpt"
+    }
+  ]
+}

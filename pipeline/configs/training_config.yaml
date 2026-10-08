@@ -1,0 +1,66 @@
+# Training config. training_mode: scratch (timm ViT/ResNet on ImageNet, CrossEntropy; all perturbations except random_target) | finetune (CLIP-HBA + DoRA on THINGS, MSE; all perturbations).
+
+# Training mode
+training_mode: finetune        # scratch | finetune
+
+# Paths
+# "paths:<key>" values resolve through pipeline/paths.yaml; override with --save_path / --img_dir.
+save_path: "paths:cliphba_runs_root"
+img_dir: "paths:things_images"
+img_annotations_file: "./pipeline/data/spose_embedding66d_rescaled_1806train.csv"
+baseline_checkpoint_path:           # set when perturb_epoch > 0
+
+# Logging & W&B
+wandb_project:                # Optional: Name of the WANDB project to use for logging
+wandb_entity:                 # Optional: your username or team name
+debug_logging: false          # whether to log debug information to the console
+logger: None                  # Logger to use for training. None for no logging.
+
+
+# Training parameters
+dataset_type: things        # Dataset to use for training: things | imagenet
+max_duration: 500             # number of epochs to train for
+early_stopping_patience: 20   # number of epochs to wait before stopping training if the validation loss does not improve
+batch_size: 64               # number of training samples per batch
+train_portion: 0.8            # portion of the training data to use for training
+criterion: MSELoss   # loss function to use for training
+random_seed: 1                # random seed to use for training
+cuda: 1                      # GPU to use for training; -1 for all GPUs, 0 for GPU 0, 1 for GPU 1, 2 for CPU
+
+# Optimizer & LR schedule
+opt: AdamW                      # sgd | adamw
+lr: 3e-4                       # CLIP-HBA target LR
+# momentum: 0.9                 # SGD momentum (SGD only; ignored for AdamW)
+# weight_decay: 1e-4            # L2 regularisation
+# lr_scheduler: none
+                              # none | cosineannealinglr | cosineannealinglrwithwarmup
+# lr_warmup_duration:          # Linear warmup duration, e.g. '5ep'
+
+# Perturbation parameters
+perturb_type: none            # none | random_target | label_shuffle | image_noise | uniform_images
+perturb_epoch:                # epoch to start perturbation (0-indexed)
+perturb_length:               # number of epochs to perturb
+perturb_seed:                 # random seed to use for perturbation
+
+# RSA parameters
+behavioral_rsa: True          # whether to conduct behavioral RSA within the training loop
+rsa_annotations_file: "./pipeline/data/spose_embedding66d_rescaled_48val_reordered.csv" 
+                              # path to the csv file containing the image names and the corresponding target embeddings for the THINGS training data
+behavioral_rdm48_file: "./pipeline/data/RDM48_triplet.mat"
+rsa_things_img_dir: "paths:things_images"
+model_rdm_distance_metric: pearson 
+                              # distance metric to use to create the model RDM
+rsa_similarity_metric: spearman 
+                              # similarity metric to use for RSA
+
+# Model parameters, used when training_mode: scratch
+# architecture: RN50            # architecture to use for the model: ViT-B/16 | ViT-L/14 | RN50 | RN101 | CLIP-ViT-L/14
+# pretrained: false             # load pretrained weights? (default false for CPU-only)
+# num_classes: 1000             # number of classes to use for the model
+
+# Model parameters, used when training_mode: finetune (ignored for scratch)
+architecture: CLIP-HBA
+clip_hba_backbone: ViT-L/14     # CLIP backbone: ViT-B/16 | ViT-L/14 | RN50
+vision_layers: 2                 # Vision encoder DoRA layers
+transformer_layers: 1            # Text encoder DoRA layers
+rank: 32                         # DoRA low-rank dimension

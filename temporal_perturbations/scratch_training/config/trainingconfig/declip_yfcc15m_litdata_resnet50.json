@@ -1,0 +1,78 @@
+{
+    "name": "declip_yfcc15m_litdata_resnet50",
+    "model_config": "resnet_50",
+    "data": {
+        "dataset_root": null,
+        "dataset_type": "yfcc15m_litdata",
+        "hf_dataset_name": "hf://datasets/Kaichengalex/YFCC15M/data",
+        "hf_cache_dir": null,
+        "hf_streaming": false,
+        "use_litdata": true,
+        "parquet_data_dir": null,
+        "image_size": 224,
+        "batch_size": 512,
+        "num_workers": 8,
+        "pin_memory": true,
+        "interpolation": "bicubic",
+        "tokenizer_name": "openai/clip-vit-base-patch32",
+        "image_col": "images",
+        "text_col": "texts",
+        "val_dataset_root": null,
+        "eval_batch_size": 128
+    },
+    "optimizer": {
+        "name": "adamw",
+        "lr": 0.0005,
+        "weight_decay": 0.1,
+        "beta1": 0.9,
+        "beta2": 0.98,
+        "eps": 1e-8
+    },
+    "scheduler": {
+        "name": "cosine",
+        "warmup_steps": 2500,
+        "lr_cooldown_end": 1e-7,
+        "lr_cooldown_power": 1.0,
+        "cooldown_steps": null,
+        "min_lr": 0.0
+    },
+    "loss": {
+        "margin": null,
+        "distance_type": null,
+        "local_loss": false,
+        "gather_with_grad": false,
+        "cache_labels": true,
+        "scale": 1.0
+    },
+    "distributed": {
+        "strategy": "ddp",
+        "sync_batchnorm": true,
+        "find_unused_parameters": false,
+        "num_nodes": 1
+    },
+    "wandb": {
+        "enabled": false,
+        "project": null,
+        "name": null,
+        "entity": null,
+        "tags": ["clip", "resnet50", "yfcc15m", "litdata"],
+        "log_model": false,
+        "save_code": true
+    },
+    "epochs": 32,
+    "precision": "bf16-mixed",
+    "seed": 42,
+    "accelerator": "auto",
+    "devices": "auto",
+    "gradient_clip_val": 3,
+    "accumulate_grad_batches": 12,
+    "log_every_n_steps": 50,
+    "save_dir": null,
+    "save_top_k": 32,
+    "save_every_n_train_steps": null,
+    "deterministic": true,
+    "freeze_vision_blocks": 0,
+    "validate_every_n_epoch": 1,
+    "monitor_metric": "val/cifar100/epoch_acc1",
+    "monitor_mode": "max"
+} 

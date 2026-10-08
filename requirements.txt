@@ -1,0 +1,58 @@
+# Core deep learning framework
+torch>=2.0.0
+torchvision>=0.15.0
+timm>=0.9.0                 # model zoo used by temporal_perturbations.models.factory
+wandb>=0.16.0               # imported by the CLIP-HBA trainer; logging is optional
+
+# PyTorch Lightning + metrics (temporal_perturbations/scratch_training)
+pytorch-lightning>=2.5.0    # CLIPLightningModule, DDPStrategy, ModelCheckpoint
+torchmetrics>=1.0.0         # zero-shot CIFAR10/100 accuracy in CLIPLightningModule
+tensorboard>=2.15.0         # TensorBoardLogger used by train_from_scratch.py
+
+# Data processing
+numpy>=1.21.0
+pandas>=1.3.0
+Pillow>=8.0.0
+
+# Configuration and utilities
+PyYAML>=6.0
+tqdm>=4.66.3                # datasets>=4.x requires >=4.66.3
+pydantic>=2.0               # TrainingConfig / CLIPConfig dataclasses
+
+# Scientific computing
+scipy>=1.7.0
+scikit-learn>=1.0.0
+
+# Text processing (for CLIP tokenizer)
+ftfy>=6.0.0
+regex>=2021.0.0
+
+# Transformers (CLIP text encoder + tokenizer; also used by CLIP-HBA)
+transformers>=4.40.0
+
+# HuggingFace streaming (ImageNet-1k via ILSVRC/imagenet-1k)
+datasets>=2.14.0
+huggingface_hub>=0.19.0
+hf_transfer>=0.1.5          # speeds up parquet downloads when HF_HUB_ENABLE_HF_TRANSFER=1
+multiprocess>=0.70.0        # hard dep of datasets; sometimes missed by resolver
+pyarrow>=21.0.0             # parquet backend (datasets>=4.x requires >=21)
+xxhash>=3.0.0               # hash backend used by datasets
+requests>=2.32.2            # datasets>=4.x requires >=2.32.2
+
+# YFCC15M streaming (CLIP-ViT-B/32 contrastive training)
+litdata>=0.2.51             # streaming parquet shards from HF; see scratch_training/litdata_patch.py
+polars>=1.0.0               # required by litdata's parquet reader
+
+# Dataset builders for the linear-probe transfer suite (arXiv:2505.14204)
+clip_benchmark>=1.6.0
+open_clip_torch>=2.24.0
+
+# Analysis and figures
+matplotlib>=3.5.0
+seaborn>=0.11.0
+trimap>=1.1.4               # 2-D embedding maps (trimap_imagenet.py, trimap_recovery.py)
+nltk>=3.8                   # WordNet categories for the ImageNet maps; needs `python -m nltk.downloader wordnet`
+jupyter>=1.0.0              # pipeline/notebook/pipeline.ipynb
+pytest>=7.0.0
+ipykernel>=6.0.0            # registers the env as a Jupyter kernel for pipeline/notebook/pipeline.ipynb
+

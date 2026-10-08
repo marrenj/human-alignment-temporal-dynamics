@@ -1,0 +1,58 @@
+{
+  "run_name": "clip_vitb32_image_noise_late",
+  "epoch": 31,
+  "clip_feature": "cls",
+  "checkpoint": "<runs_root>/clip_vitb32_image_noise_late/checkpoints/all_epochs/epoch_031.ckpt",
+  "c_selection": "val_sweep_v2",
+  "feature_scaling": "standardized",
+  "C": 0.01,
+  "c_sweep": {
+    "C_grid": [
+      1e-06,
+      0.0001,
+      0.001,
+      0.0031622776601683794,
+      0.01,
+      0.03162277660168379,
+      0.1,
+      1.0,
+      100.0,
+      10000.0,
+      1000000.0
+    ],
+    "val_top1": [
+      0.28579847248402823,
+      0.5350872057853594,
+      0.6140856173872998,
+      0.6301139978066838,
+      0.6349416351523809,
+      0.6299305710037348,
+      0.6201308964887426,
+      0.6041883754239306,
+      0.6029902471578602,
+      0.6007774174286684,
+      0.6000749318003535
+    ],
+    "n_val": 256233,
+    "val_fraction": 0.2,
+    "sweep_max_iter": 2000
+  },
+  "c_sweep_cold_start": true,
+  "probe_solver": "torch",
+  "probe_max_iter": 20000,
+  "n_features": 768,
+  "n_constant_features": 0,
+  "imagenet_val": {
+    "top1_accuracy": 0.61176,
+    "top5_accuracy": 0.84536,
+    "n_samples": 50000
+  },
+  "probe_fit": {
+    "C": 0.01,
+    "n_iter": 69,
+    "converged": true,
+    "objective": 6.907755278982221,
+    "elapsed_s": 26.92415452003479,
+    "train_top1": 0.707599401473999
+  }
+}

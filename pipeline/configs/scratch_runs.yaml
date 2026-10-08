@@ -1,0 +1,293 @@
+# Exact train_from_scratch.py arguments for every from-scratch run in the paper.
+#
+# Launch one run (single node, `gpus` GPUs) with
+#   torchrun --nproc_per_node <gpus> pipeline/scripts/training/train_from_scratch.py <args>
+# after substituting the placeholders:
+#   {runs_root}           paths.yaml `runs_root` (checkpoints land in <runs_root>/<run>/)
+#   {imagenet_train_dir}  LitData-indexed HF imagenet-1k train parquet shards
+#   {imagenet_val_dir}    LitData-indexed HF imagenet-1k validation parquet shards
+#   {yfcc15m_parquet_dir} YFCC15M image-text parquet shards (LitData-indexed)
+#   {val_dataset_root}    CIFAR-10/100 cache for the --multi_val side evaluation
+#
+# `gpus` is part of the recipe, not a scheduling knob: accumulate_grad_batches =
+# target_batch_size // batch_size // world_size, so the GPU count fixes the effective
+# batch (1024 for RN50, 1536 for ViT-B/16 and ConvNeXt-B, 49152 for CLIP ViT-B/32).
+# Perturbed runs keep their baseline's GPU count so DDP sharding and data order match
+# the run they fork from.
+#
+# Order: each family's baseline first (it saves every epoch under
+# checkpoints/all_epochs/). A perturbed run `<prefix>_<type>_<onset>` resumes from the
+# baseline's checkpoint at epoch E-1, applies the perturbation for epoch E only
+# (perturb_length 1), and trains on unperturbed to the end of the schedule.
+# `*_recovery_dynamics` runs resume from a perturbed run and train a single
+# recovery epoch with log-spaced sub-epoch checkpoints (--stop_epoch).
+
+runs:
+  clip_vitb32_baseline:
+    gpus: 8
+    args: >-
+      --config_preset declip_yfcc15m_litdata_vitb32 --epochs 32 --multi_val --experiment_name clip_vitb32_baseline --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --parquet_data_dir {yfcc15m_parquet_dir} --save_every_epoch
+  clip_vitb32_image_noise_early:
+    gpus: 8
+    args: >-
+      --config_preset declip_yfcc15m_litdata_vitb32 --epochs 32 --multi_val --experiment_name clip_vitb32_image_noise_early --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --parquet_data_dir {yfcc15m_parquet_dir} --resume_ckpt_path {runs_root}/clip_vitb32_baseline/checkpoints/all_epochs/epoch_004.ckpt --perturb_type image_noise --perturb_epoch 5 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  clip_vitb32_label_shuffle_early:
+    gpus: 8
+    args: >-
+      --config_preset declip_yfcc15m_litdata_vitb32 --epochs 32 --multi_val --experiment_name clip_vitb32_label_shuffle_early --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --parquet_data_dir {yfcc15m_parquet_dir} --resume_ckpt_path {runs_root}/clip_vitb32_baseline/checkpoints/all_epochs/epoch_004.ckpt --perturb_type label_shuffle --perturb_epoch 5 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  clip_vitb32_uniform_images_early:
+    gpus: 8
+    args: >-
+      --config_preset declip_yfcc15m_litdata_vitb32 --epochs 32 --multi_val --experiment_name clip_vitb32_uniform_images_early --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --parquet_data_dir {yfcc15m_parquet_dir} --resume_ckpt_path {runs_root}/clip_vitb32_baseline/checkpoints/all_epochs/epoch_004.ckpt --perturb_type uniform_images --perturb_epoch 5 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  clip_vitb32_image_noise_mid:
+    gpus: 8
+    args: >-
+      --config_preset declip_yfcc15m_litdata_vitb32 --epochs 32 --multi_val --experiment_name clip_vitb32_image_noise_mid --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --parquet_data_dir {yfcc15m_parquet_dir} --resume_ckpt_path {runs_root}/clip_vitb32_baseline/checkpoints/all_epochs/epoch_012.ckpt --perturb_type image_noise --perturb_epoch 13 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  clip_vitb32_label_shuffle_mid:
+    gpus: 8
+    args: >-
+      --config_preset declip_yfcc15m_litdata_vitb32 --epochs 32 --multi_val --experiment_name clip_vitb32_label_shuffle_mid --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --parquet_data_dir {yfcc15m_parquet_dir} --resume_ckpt_path {runs_root}/clip_vitb32_baseline/checkpoints/all_epochs/epoch_012.ckpt --perturb_type label_shuffle --perturb_epoch 13 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  clip_vitb32_uniform_images_mid:
+    gpus: 8
+    args: >-
+      --config_preset declip_yfcc15m_litdata_vitb32 --epochs 32 --multi_val --experiment_name clip_vitb32_uniform_images_mid --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --parquet_data_dir {yfcc15m_parquet_dir} --resume_ckpt_path {runs_root}/clip_vitb32_baseline/checkpoints/all_epochs/epoch_012.ckpt --perturb_type uniform_images --perturb_epoch 13 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  clip_vitb32_image_noise_late:
+    gpus: 8
+    args: >-
+      --config_preset declip_yfcc15m_litdata_vitb32 --epochs 32 --multi_val --experiment_name clip_vitb32_image_noise_late --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --parquet_data_dir {yfcc15m_parquet_dir} --resume_ckpt_path {runs_root}/clip_vitb32_baseline/checkpoints/all_epochs/epoch_027.ckpt --perturb_type image_noise --perturb_epoch 28 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  clip_vitb32_label_shuffle_late:
+    gpus: 8
+    args: >-
+      --config_preset declip_yfcc15m_litdata_vitb32 --epochs 32 --multi_val --experiment_name clip_vitb32_label_shuffle_late --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --parquet_data_dir {yfcc15m_parquet_dir} --resume_ckpt_path {runs_root}/clip_vitb32_baseline/checkpoints/all_epochs/epoch_027.ckpt --perturb_type label_shuffle --perturb_epoch 28 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  clip_vitb32_uniform_images_late:
+    gpus: 8
+    args: >-
+      --config_preset declip_yfcc15m_litdata_vitb32 --epochs 32 --multi_val --experiment_name clip_vitb32_uniform_images_late --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --parquet_data_dir {yfcc15m_parquet_dir} --resume_ckpt_path {runs_root}/clip_vitb32_baseline/checkpoints/all_epochs/epoch_027.ckpt --perturb_type uniform_images --perturb_epoch 28 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  vitb16_imagenet_baseline:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_vitb16 --epochs 90 --multi_val --experiment_name vitb16_imagenet_baseline --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --save_every_epoch
+  vitb16_imagenet_image_noise_early:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_vitb16 --epochs 90 --multi_val --experiment_name vitb16_imagenet_image_noise_early --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/vitb16_imagenet_baseline/checkpoints/all_epochs/epoch_004.ckpt --perturb_type image_noise --perturb_epoch 5 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  vitb16_imagenet_label_shuffle_early:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_vitb16 --epochs 90 --multi_val --experiment_name vitb16_imagenet_label_shuffle_early --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/vitb16_imagenet_baseline/checkpoints/all_epochs/epoch_004.ckpt --perturb_type label_shuffle --perturb_epoch 5 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  vitb16_imagenet_uniform_images_early:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_vitb16 --epochs 90 --multi_val --experiment_name vitb16_imagenet_uniform_images_early --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/vitb16_imagenet_baseline/checkpoints/all_epochs/epoch_004.ckpt --perturb_type uniform_images --perturb_epoch 5 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  vitb16_imagenet_image_noise_late:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_vitb16 --epochs 90 --multi_val --experiment_name vitb16_imagenet_image_noise_late --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/vitb16_imagenet_baseline/checkpoints/all_epochs/epoch_069.ckpt --perturb_type image_noise --perturb_epoch 70 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  vitb16_imagenet_label_shuffle_late:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_vitb16 --epochs 90 --multi_val --experiment_name vitb16_imagenet_label_shuffle_late --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/vitb16_imagenet_baseline/checkpoints/all_epochs/epoch_069.ckpt --perturb_type label_shuffle --perturb_epoch 70 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  vitb16_imagenet_uniform_images_late:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_vitb16 --epochs 90 --multi_val --experiment_name vitb16_imagenet_uniform_images_late --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/vitb16_imagenet_baseline/checkpoints/all_epochs/epoch_069.ckpt --perturb_type uniform_images --perturb_epoch 70 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  vitb16_imagenet_image_noise_mid:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_vitb16 --epochs 90 --multi_val --experiment_name vitb16_imagenet_image_noise_mid --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/vitb16_imagenet_baseline/checkpoints/all_epochs/epoch_029.ckpt --perturb_type image_noise --perturb_epoch 30 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  vitb16_imagenet_label_shuffle_mid:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_vitb16 --epochs 90 --multi_val --experiment_name vitb16_imagenet_label_shuffle_mid --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/vitb16_imagenet_baseline/checkpoints/all_epochs/epoch_029.ckpt --perturb_type label_shuffle --perturb_epoch 30 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  vitb16_imagenet_uniform_images_mid:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_vitb16 --epochs 90 --multi_val --experiment_name vitb16_imagenet_uniform_images_mid --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/vitb16_imagenet_baseline/checkpoints/all_epochs/epoch_029.ckpt --perturb_type uniform_images --perturb_epoch 30 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  vitb16_imagenet_label_shuffle_early_recovery_dynamics:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_vitb16 --epochs 90 --multi_val --experiment_name vitb16_imagenet_label_shuffle_early_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/vitb16_imagenet_label_shuffle_early/checkpoints/all_epochs/epoch_005.ckpt --perturb_type label_shuffle --perturb_epoch 5 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,18,35,66,125,235,442,833 --sub_epoch_ckpt_epoch 6 --stop_epoch 6
+  vitb16_imagenet_image_noise_early_recovery_dynamics:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_vitb16 --epochs 90 --multi_val --experiment_name vitb16_imagenet_image_noise_early_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/vitb16_imagenet_image_noise_early/checkpoints/all_epochs/epoch_005.ckpt --perturb_type image_noise --perturb_epoch 5 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,18,35,66,125,235,442,833 --sub_epoch_ckpt_epoch 6 --stop_epoch 6
+  vitb16_imagenet_uniform_images_early_recovery_dynamics:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_vitb16 --epochs 90 --multi_val --experiment_name vitb16_imagenet_uniform_images_early_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/vitb16_imagenet_uniform_images_early/checkpoints/all_epochs/epoch_005.ckpt --perturb_type uniform_images --perturb_epoch 5 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,18,35,66,125,235,442,833 --sub_epoch_ckpt_epoch 6 --stop_epoch 6
+  vitb16_imagenet_label_shuffle_mid_recovery_dynamics:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_vitb16 --epochs 90 --multi_val --experiment_name vitb16_imagenet_label_shuffle_mid_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/vitb16_imagenet_label_shuffle_mid/checkpoints/all_epochs/epoch_030.ckpt --perturb_type label_shuffle --perturb_epoch 30 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,18,35,66,125,235,442,833 --sub_epoch_ckpt_epoch 31 --stop_epoch 31
+  vitb16_imagenet_image_noise_mid_recovery_dynamics:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_vitb16 --epochs 90 --multi_val --experiment_name vitb16_imagenet_image_noise_mid_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/vitb16_imagenet_image_noise_mid/checkpoints/all_epochs/epoch_030.ckpt --perturb_type image_noise --perturb_epoch 30 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,18,35,66,125,235,442,833 --sub_epoch_ckpt_epoch 31 --stop_epoch 31
+  vitb16_imagenet_uniform_images_mid_recovery_dynamics:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_vitb16 --epochs 90 --multi_val --experiment_name vitb16_imagenet_uniform_images_mid_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/vitb16_imagenet_uniform_images_mid/checkpoints/all_epochs/epoch_030.ckpt --perturb_type uniform_images --perturb_epoch 30 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,18,35,66,125,235,442,833 --sub_epoch_ckpt_epoch 31 --stop_epoch 31
+  vitb16_imagenet_label_shuffle_late_recovery_dynamics:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_vitb16 --epochs 90 --multi_val --experiment_name vitb16_imagenet_label_shuffle_late_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/vitb16_imagenet_label_shuffle_late/checkpoints/all_epochs/epoch_070.ckpt --perturb_type label_shuffle --perturb_epoch 70 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,18,35,66,125,235,442,833 --sub_epoch_ckpt_epoch 71 --stop_epoch 71
+  vitb16_imagenet_image_noise_late_recovery_dynamics:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_vitb16 --epochs 90 --multi_val --experiment_name vitb16_imagenet_image_noise_late_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/vitb16_imagenet_image_noise_late/checkpoints/all_epochs/epoch_070.ckpt --perturb_type image_noise --perturb_epoch 70 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,18,35,66,125,235,442,833 --sub_epoch_ckpt_epoch 71 --stop_epoch 71
+  vitb16_imagenet_uniform_images_late_recovery_dynamics:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_vitb16 --epochs 90 --multi_val --experiment_name vitb16_imagenet_uniform_images_late_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/vitb16_imagenet_uniform_images_late/checkpoints/all_epochs/epoch_070.ckpt --perturb_type uniform_images --perturb_epoch 70 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,18,35,66,125,235,442,833 --sub_epoch_ckpt_epoch 71 --stop_epoch 71
+  convnext_b_imagenet_baseline:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_convnext_b --epochs 90 --multi_val --experiment_name convnext_b_imagenet_baseline --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --save_every_epoch
+  convnext_b_imagenet_image_noise_late:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_convnext_b --epochs 90 --multi_val --experiment_name convnext_b_imagenet_image_noise_late --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/convnext_b_imagenet_baseline/checkpoints/all_epochs/epoch_069.ckpt --perturb_type image_noise --perturb_epoch 70 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  convnext_b_imagenet_label_shuffle_late:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_convnext_b --epochs 90 --multi_val --experiment_name convnext_b_imagenet_label_shuffle_late --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/convnext_b_imagenet_baseline/checkpoints/all_epochs/epoch_069.ckpt --perturb_type label_shuffle --perturb_epoch 70 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  convnext_b_imagenet_uniform_images_late:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_convnext_b --epochs 90 --multi_val --experiment_name convnext_b_imagenet_uniform_images_late --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/convnext_b_imagenet_baseline/checkpoints/all_epochs/epoch_069.ckpt --perturb_type uniform_images --perturb_epoch 70 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  convnext_b_imagenet_image_noise_early:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_convnext_b --epochs 90 --multi_val --experiment_name convnext_b_imagenet_image_noise_early --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/convnext_b_imagenet_baseline/checkpoints/all_epochs/epoch_004.ckpt --perturb_type image_noise --perturb_epoch 5 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  convnext_b_imagenet_label_shuffle_early:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_convnext_b --epochs 90 --multi_val --experiment_name convnext_b_imagenet_label_shuffle_early --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/convnext_b_imagenet_baseline/checkpoints/all_epochs/epoch_004.ckpt --perturb_type label_shuffle --perturb_epoch 5 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  convnext_b_imagenet_uniform_images_early:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_convnext_b --epochs 90 --multi_val --experiment_name convnext_b_imagenet_uniform_images_early --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/convnext_b_imagenet_baseline/checkpoints/all_epochs/epoch_004.ckpt --perturb_type uniform_images --perturb_epoch 5 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  convnext_b_imagenet_image_noise_mid:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_convnext_b --epochs 90 --multi_val --experiment_name convnext_b_imagenet_image_noise_mid --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/convnext_b_imagenet_baseline/checkpoints/all_epochs/epoch_029.ckpt --perturb_type image_noise --perturb_epoch 30 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  convnext_b_imagenet_label_shuffle_mid:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_convnext_b --epochs 90 --multi_val --experiment_name convnext_b_imagenet_label_shuffle_mid --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/convnext_b_imagenet_baseline/checkpoints/all_epochs/epoch_029.ckpt --perturb_type label_shuffle --perturb_epoch 30 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  convnext_b_imagenet_uniform_images_mid:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_convnext_b --epochs 90 --multi_val --experiment_name convnext_b_imagenet_uniform_images_mid --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/convnext_b_imagenet_baseline/checkpoints/all_epochs/epoch_029.ckpt --perturb_type uniform_images --perturb_epoch 30 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  convnext_b_imagenet_label_shuffle_early_recovery_dynamics:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_convnext_b --epochs 90 --multi_val --experiment_name convnext_b_imagenet_label_shuffle_early_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/convnext_b_imagenet_label_shuffle_early/checkpoints/all_epochs/epoch_005.ckpt --perturb_type label_shuffle --perturb_epoch 5 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,18,35,66,125,235,442,833 --sub_epoch_ckpt_epoch 6 --stop_epoch 6
+  convnext_b_imagenet_image_noise_early_recovery_dynamics:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_convnext_b --epochs 90 --multi_val --experiment_name convnext_b_imagenet_image_noise_early_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/convnext_b_imagenet_image_noise_early/checkpoints/all_epochs/epoch_005.ckpt --perturb_type image_noise --perturb_epoch 5 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,18,35,66,125,235,442,833 --sub_epoch_ckpt_epoch 6 --stop_epoch 6
+  convnext_b_imagenet_uniform_images_early_recovery_dynamics:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_convnext_b --epochs 90 --multi_val --experiment_name convnext_b_imagenet_uniform_images_early_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/convnext_b_imagenet_uniform_images_early/checkpoints/all_epochs/epoch_005.ckpt --perturb_type uniform_images --perturb_epoch 5 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,18,35,66,125,235,442,833 --sub_epoch_ckpt_epoch 6 --stop_epoch 6
+  convnext_b_imagenet_label_shuffle_mid_recovery_dynamics:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_convnext_b --epochs 90 --multi_val --experiment_name convnext_b_imagenet_label_shuffle_mid_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/convnext_b_imagenet_label_shuffle_mid/checkpoints/all_epochs/epoch_030.ckpt --perturb_type label_shuffle --perturb_epoch 30 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,18,35,66,125,235,442,833 --sub_epoch_ckpt_epoch 31 --stop_epoch 31
+  convnext_b_imagenet_image_noise_mid_recovery_dynamics:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_convnext_b --epochs 90 --multi_val --experiment_name convnext_b_imagenet_image_noise_mid_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/convnext_b_imagenet_image_noise_mid/checkpoints/all_epochs/epoch_030.ckpt --perturb_type image_noise --perturb_epoch 30 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,18,35,66,125,235,442,833 --sub_epoch_ckpt_epoch 31 --stop_epoch 31
+  convnext_b_imagenet_uniform_images_mid_recovery_dynamics:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_convnext_b --epochs 90 --multi_val --experiment_name convnext_b_imagenet_uniform_images_mid_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/convnext_b_imagenet_uniform_images_mid/checkpoints/all_epochs/epoch_030.ckpt --perturb_type uniform_images --perturb_epoch 30 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,18,35,66,125,235,442,833 --sub_epoch_ckpt_epoch 31 --stop_epoch 31
+  convnext_b_imagenet_label_shuffle_late_recovery_dynamics:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_convnext_b --epochs 90 --multi_val --experiment_name convnext_b_imagenet_label_shuffle_late_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/convnext_b_imagenet_label_shuffle_late/checkpoints/all_epochs/epoch_070.ckpt --perturb_type label_shuffle --perturb_epoch 70 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,18,35,66,125,235,442,833 --sub_epoch_ckpt_epoch 71 --stop_epoch 71
+  convnext_b_imagenet_image_noise_late_recovery_dynamics:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_convnext_b --epochs 90 --multi_val --experiment_name convnext_b_imagenet_image_noise_late_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/convnext_b_imagenet_image_noise_late/checkpoints/all_epochs/epoch_070.ckpt --perturb_type image_noise --perturb_epoch 70 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,18,35,66,125,235,442,833 --sub_epoch_ckpt_epoch 71 --stop_epoch 71
+  convnext_b_imagenet_uniform_images_late_recovery_dynamics:
+    gpus: 6
+    args: >-
+      --config_preset supervised_imagenet_convnext_b --epochs 90 --multi_val --experiment_name convnext_b_imagenet_uniform_images_late_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/convnext_b_imagenet_uniform_images_late/checkpoints/all_epochs/epoch_070.ckpt --perturb_type uniform_images --perturb_epoch 70 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,18,35,66,125,235,442,833 --sub_epoch_ckpt_epoch 71 --stop_epoch 71
+  resnet50_imagenet_baseline:
+    gpus: 4
+    args: >-
+      --config_preset supervised_imagenet_resnet50 --epochs 90 --multi_val --experiment_name resnet50_imagenet_baseline --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --save_every_epoch
+  resnet50_imagenet_image_noise_early:
+    gpus: 4
+    args: >-
+      --config_preset supervised_imagenet_resnet50 --epochs 90 --multi_val --experiment_name resnet50_imagenet_image_noise_early --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/resnet50_imagenet_baseline/checkpoints/all_epochs/epoch_004.ckpt --perturb_type image_noise --perturb_epoch 5 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  resnet50_imagenet_label_shuffle_early:
+    gpus: 4
+    args: >-
+      --config_preset supervised_imagenet_resnet50 --epochs 90 --multi_val --experiment_name resnet50_imagenet_label_shuffle_early --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/resnet50_imagenet_baseline/checkpoints/all_epochs/epoch_004.ckpt --perturb_type label_shuffle --perturb_epoch 5 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  resnet50_imagenet_uniform_images_early:
+    gpus: 4
+    args: >-
+      --config_preset supervised_imagenet_resnet50 --epochs 90 --multi_val --experiment_name resnet50_imagenet_uniform_images_early --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/resnet50_imagenet_baseline/checkpoints/all_epochs/epoch_004.ckpt --perturb_type uniform_images --perturb_epoch 5 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  resnet50_imagenet_image_noise_mid:
+    gpus: 4
+    args: >-
+      --config_preset supervised_imagenet_resnet50 --epochs 90 --multi_val --experiment_name resnet50_imagenet_image_noise_mid --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/resnet50_imagenet_baseline/checkpoints/all_epochs/epoch_029.ckpt --perturb_type image_noise --perturb_epoch 30 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  resnet50_imagenet_label_shuffle_mid:
+    gpus: 4
+    args: >-
+      --config_preset supervised_imagenet_resnet50 --epochs 90 --multi_val --experiment_name resnet50_imagenet_label_shuffle_mid --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/resnet50_imagenet_baseline/checkpoints/all_epochs/epoch_029.ckpt --perturb_type label_shuffle --perturb_epoch 30 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  resnet50_imagenet_uniform_images_mid:
+    gpus: 4
+    args: >-
+      --config_preset supervised_imagenet_resnet50 --epochs 90 --multi_val --experiment_name resnet50_imagenet_uniform_images_mid --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/resnet50_imagenet_baseline/checkpoints/all_epochs/epoch_029.ckpt --perturb_type uniform_images --perturb_epoch 30 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  resnet50_imagenet_image_noise_late:
+    gpus: 4
+    args: >-
+      --config_preset supervised_imagenet_resnet50 --epochs 90 --multi_val --experiment_name resnet50_imagenet_image_noise_late --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/resnet50_imagenet_baseline/checkpoints/all_epochs/epoch_069.ckpt --perturb_type image_noise --perturb_epoch 70 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  resnet50_imagenet_label_shuffle_late:
+    gpus: 4
+    args: >-
+      --config_preset supervised_imagenet_resnet50 --epochs 90 --multi_val --experiment_name resnet50_imagenet_label_shuffle_late --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/resnet50_imagenet_baseline/checkpoints/all_epochs/epoch_069.ckpt --perturb_type label_shuffle --perturb_epoch 70 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  resnet50_imagenet_uniform_images_late:
+    gpus: 4
+    args: >-
+      --config_preset supervised_imagenet_resnet50 --epochs 90 --multi_val --experiment_name resnet50_imagenet_uniform_images_late --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/resnet50_imagenet_baseline/checkpoints/all_epochs/epoch_069.ckpt --perturb_type uniform_images --perturb_epoch 70 --perturb_length 1 --perturb_seed 42 --save_every_epoch
+  resnet50_imagenet_label_shuffle_early_recovery_dynamics:
+    gpus: 4
+    args: >-
+      --config_preset supervised_imagenet_resnet50 --epochs 90 --multi_val --experiment_name resnet50_imagenet_label_shuffle_early_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/resnet50_imagenet_label_shuffle_early/checkpoints/all_epochs/epoch_005.ckpt --perturb_type label_shuffle --perturb_epoch 5 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,25,63,125,250,500,1000,1250 --sub_epoch_ckpt_epoch 6 --stop_epoch 6
+  resnet50_imagenet_image_noise_early_recovery_dynamics:
+    gpus: 4
+    args: >-
+      --config_preset supervised_imagenet_resnet50 --epochs 90 --multi_val --experiment_name resnet50_imagenet_image_noise_early_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/resnet50_imagenet_image_noise_early/checkpoints/all_epochs/epoch_005.ckpt --perturb_type image_noise --perturb_epoch 5 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,25,63,125,250,500,1000,1250 --sub_epoch_ckpt_epoch 6 --stop_epoch 6
+  resnet50_imagenet_uniform_images_early_recovery_dynamics:
+    gpus: 4
+    args: >-
+      --config_preset supervised_imagenet_resnet50 --epochs 90 --multi_val --experiment_name resnet50_imagenet_uniform_images_early_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/resnet50_imagenet_uniform_images_early/checkpoints/all_epochs/epoch_005.ckpt --perturb_type uniform_images --perturb_epoch 5 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,25,63,125,250,500,1000,1250 --sub_epoch_ckpt_epoch 6 --stop_epoch 6
+  resnet50_imagenet_label_shuffle_mid_recovery_dynamics:
+    gpus: 4
+    args: >-
+      --config_preset supervised_imagenet_resnet50 --epochs 90 --multi_val --experiment_name resnet50_imagenet_label_shuffle_mid_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/resnet50_imagenet_label_shuffle_mid/checkpoints/all_epochs/epoch_030.ckpt --perturb_type label_shuffle --perturb_epoch 30 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,25,63,125,250,500,1000,1250 --sub_epoch_ckpt_epoch 31 --stop_epoch 31
+  resnet50_imagenet_image_noise_mid_recovery_dynamics:
+    gpus: 4
+    args: >-
+      --config_preset supervised_imagenet_resnet50 --epochs 90 --multi_val --experiment_name resnet50_imagenet_image_noise_mid_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/resnet50_imagenet_image_noise_mid/checkpoints/all_epochs/epoch_030.ckpt --perturb_type image_noise --perturb_epoch 30 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,25,63,125,250,500,1000,1250 --sub_epoch_ckpt_epoch 31 --stop_epoch 31
+  resnet50_imagenet_uniform_images_mid_recovery_dynamics:
+    gpus: 4
+    args: >-
+      --config_preset supervised_imagenet_resnet50 --epochs 90 --multi_val --experiment_name resnet50_imagenet_uniform_images_mid_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/resnet50_imagenet_uniform_images_mid/checkpoints/all_epochs/epoch_030.ckpt --perturb_type uniform_images --perturb_epoch 30 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,25,63,125,250,500,1000,1250 --sub_epoch_ckpt_epoch 31 --stop_epoch 31
+  resnet50_imagenet_label_shuffle_late_recovery_dynamics:
+    gpus: 4
+    args: >-
+      --config_preset supervised_imagenet_resnet50 --epochs 90 --multi_val --experiment_name resnet50_imagenet_label_shuffle_late_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/resnet50_imagenet_label_shuffle_late/checkpoints/all_epochs/epoch_070.ckpt --perturb_type label_shuffle --perturb_epoch 70 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,25,63,125,250,500,1000,1250 --sub_epoch_ckpt_epoch 71 --stop_epoch 71
+  resnet50_imagenet_image_noise_late_recovery_dynamics:
+    gpus: 4
+    args: >-
+      --config_preset supervised_imagenet_resnet50 --epochs 90 --multi_val --experiment_name resnet50_imagenet_image_noise_late_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/resnet50_imagenet_image_noise_late/checkpoints/all_epochs/epoch_070.ckpt --perturb_type image_noise --perturb_epoch 70 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,25,63,125,250,500,1000,1250 --sub_epoch_ckpt_epoch 71 --stop_epoch 71
+  resnet50_imagenet_uniform_images_late_recovery_dynamics:
+    gpus: 4
+    args: >-
+      --config_preset supervised_imagenet_resnet50 --epochs 90 --multi_val --experiment_name resnet50_imagenet_uniform_images_late_recovery_dynamics --save_dir {runs_root} --val_dataset_root {val_dataset_root} --seed 42 --save_top_k 0 --imagenet_train_dir {imagenet_train_dir} --imagenet_val_dir {imagenet_val_dir} --resume_ckpt_path {runs_root}/resnet50_imagenet_uniform_images_late/checkpoints/all_epochs/epoch_070.ckpt --perturb_type uniform_images --perturb_epoch 70 --perturb_length 1 --perturb_seed 42 --save_every_epoch --sub_epoch_ckpt_steps 10,25,63,125,250,500,1000,1250 --sub_epoch_ckpt_epoch 71 --stop_epoch 71

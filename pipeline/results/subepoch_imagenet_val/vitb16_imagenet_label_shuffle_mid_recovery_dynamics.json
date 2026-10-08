@@ -1,0 +1,84 @@
+{
+  "run_name": "vitb16_imagenet_label_shuffle_mid_recovery_dynamics",
+  "architecture": "vitb16",
+  "timm_model": "vit_base_patch16_224",
+  "perturb_type": "label_shuffle",
+  "phase": "mid",
+  "onset_epoch": 30,
+  "has_bn": false,
+  "val_per_class": 10,
+  "steps": [
+    {
+      "epoch": 31,
+      "step": 10,
+      "val_ce_loss_raw": 6.88411332321167,
+      "val_acc1_raw": 0.004,
+      "val_ce_loss": 6.88411332321167,
+      "val_acc1": 0.004,
+      "checkpoint": "<runs_root>/vitb16_imagenet_label_shuffle_mid_recovery_dynamics/checkpoints/sub_epoch/epoch_031_step_00010.ckpt"
+    },
+    {
+      "epoch": 31,
+      "step": 18,
+      "val_ce_loss_raw": 6.824454850769043,
+      "val_acc1_raw": 0.0084,
+      "val_ce_loss": 6.824454850769043,
+      "val_acc1": 0.0084,
+      "checkpoint": "<runs_root>/vitb16_imagenet_label_shuffle_mid_recovery_dynamics/checkpoints/sub_epoch/epoch_031_step_00018.ckpt"
+    },
+    {
+      "epoch": 31,
+      "step": 35,
+      "val_ce_loss_raw": 4.71462557220459,
+      "val_acc1_raw": 0.2627,
+      "val_ce_loss": 4.71462557220459,
+      "val_acc1": 0.2627,
+      "checkpoint": "<runs_root>/vitb16_imagenet_label_shuffle_mid_recovery_dynamics/checkpoints/sub_epoch/epoch_031_step_00035.ckpt"
+    },
+    {
+      "epoch": 31,
+      "step": 66,
+      "val_ce_loss_raw": 2.204748125076294,
+      "val_acc1_raw": 0.5326,
+      "val_ce_loss": 2.204748125076294,
+      "val_acc1": 0.5326,
+      "checkpoint": "<runs_root>/vitb16_imagenet_label_shuffle_mid_recovery_dynamics/checkpoints/sub_epoch/epoch_031_step_00066.ckpt"
+    },
+    {
+      "epoch": 31,
+      "step": 125,
+      "val_ce_loss_raw": 2.1086552753448484,
+      "val_acc1_raw": 0.5325,
+      "val_ce_loss": 2.1086552753448484,
+      "val_acc1": 0.5325,
+      "checkpoint": "<runs_root>/vitb16_imagenet_label_shuffle_mid_recovery_dynamics/checkpoints/sub_epoch/epoch_031_step_00125.ckpt"
+    },
+    {
+      "epoch": 31,
+      "step": 235,
+      "val_ce_loss_raw": 2.1547402244567873,
+      "val_acc1_raw": 0.5376,
+      "val_ce_loss": 2.1547402244567873,
+      "val_acc1": 0.5376,
+      "checkpoint": "<runs_root>/vitb16_imagenet_label_shuffle_mid_recovery_dynamics/checkpoints/sub_epoch/epoch_031_step_00235.ckpt"
+    },
+    {
+      "epoch": 31,
+      "step": 442,
+      "val_ce_loss_raw": 2.0735615325927736,
+      "val_acc1_raw": 0.5511,
+      "val_ce_loss": 2.0735615325927736,
+      "val_acc1": 0.5511,
+      "checkpoint": "<runs_root>/vitb16_imagenet_label_shuffle_mid_recovery_dynamics/checkpoints/sub_epoch/epoch_031_step_00442.ckpt"
+    },
+    {
+      "epoch": 31,
+      "step": 833,
+      "val_ce_loss_raw": 1.980962034225464,
+      "val_acc1_raw": 0.5659,
+      "val_ce_loss": 1.980962034225464,
+      "val_acc1": 0.5659,
+      "checkpoint": "<runs_root>/vitb16_imagenet_label_shuffle_mid_recovery_dynamics/checkpoints/sub_epoch/epoch_031_step_00833.ckpt"
+    }
+  ]
+}

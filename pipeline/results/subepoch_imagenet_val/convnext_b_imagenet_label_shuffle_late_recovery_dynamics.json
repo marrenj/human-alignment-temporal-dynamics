@@ -1,0 +1,84 @@
+{
+  "run_name": "convnext_b_imagenet_label_shuffle_late_recovery_dynamics",
+  "architecture": "convnext_b",
+  "timm_model": "convnext_base",
+  "perturb_type": "label_shuffle",
+  "phase": "late",
+  "onset_epoch": 70,
+  "has_bn": false,
+  "val_per_class": 10,
+  "steps": [
+    {
+      "epoch": 71,
+      "step": 10,
+      "val_ce_loss_raw": 6.874175386047363,
+      "val_acc1_raw": 0.0044,
+      "val_ce_loss": 6.874175386047363,
+      "val_acc1": 0.0044,
+      "checkpoint": "<runs_root>/convnext_b_imagenet_label_shuffle_late_recovery_dynamics/checkpoints/sub_epoch/epoch_071_step_00010.ckpt"
+    },
+    {
+      "epoch": 71,
+      "step": 18,
+      "val_ce_loss_raw": 6.552579648590088,
+      "val_acc1_raw": 0.2496,
+      "val_ce_loss": 6.552579648590088,
+      "val_acc1": 0.2496,
+      "checkpoint": "<runs_root>/convnext_b_imagenet_label_shuffle_late_recovery_dynamics/checkpoints/sub_epoch/epoch_071_step_00018.ckpt"
+    },
+    {
+      "epoch": 71,
+      "step": 35,
+      "val_ce_loss_raw": 1.2326716514587401,
+      "val_acc1_raw": 0.7699,
+      "val_ce_loss": 1.2326716514587401,
+      "val_acc1": 0.7699,
+      "checkpoint": "<runs_root>/convnext_b_imagenet_label_shuffle_late_recovery_dynamics/checkpoints/sub_epoch/epoch_071_step_00035.ckpt"
+    },
+    {
+      "epoch": 71,
+      "step": 66,
+      "val_ce_loss_raw": 0.8318484411239624,
+      "val_acc1_raw": 0.7926,
+      "val_ce_loss": 0.8318484411239624,
+      "val_acc1": 0.7926,
+      "checkpoint": "<runs_root>/convnext_b_imagenet_label_shuffle_late_recovery_dynamics/checkpoints/sub_epoch/epoch_071_step_00066.ckpt"
+    },
+    {
+      "epoch": 71,
+      "step": 125,
+      "val_ce_loss_raw": 0.8550167356491088,
+      "val_acc1_raw": 0.7957,
+      "val_ce_loss": 0.8550167356491088,
+      "val_acc1": 0.7957,
+      "checkpoint": "<runs_root>/convnext_b_imagenet_label_shuffle_late_recovery_dynamics/checkpoints/sub_epoch/epoch_071_step_00125.ckpt"
+    },
+    {
+      "epoch": 71,
+      "step": 235,
+      "val_ce_loss_raw": 0.8481778144836426,
+      "val_acc1_raw": 0.7948,
+      "val_ce_loss": 0.8481778144836426,
+      "val_acc1": 0.7948,
+      "checkpoint": "<runs_root>/convnext_b_imagenet_label_shuffle_late_recovery_dynamics/checkpoints/sub_epoch/epoch_071_step_00235.ckpt"
+    },
+    {
+      "epoch": 71,
+      "step": 442,
+      "val_ce_loss_raw": 0.8209377435684204,
+      "val_acc1_raw": 0.7993,
+      "val_ce_loss": 0.8209377435684204,
+      "val_acc1": 0.7993,
+      "checkpoint": "<runs_root>/convnext_b_imagenet_label_shuffle_late_recovery_dynamics/checkpoints/sub_epoch/epoch_071_step_00442.ckpt"
+    },
+    {
+      "epoch": 71,
+      "step": 833,
+      "val_ce_loss_raw": 0.8204497369766235,
+      "val_acc1_raw": 0.7995,
+      "val_ce_loss": 0.8204497369766235,
+      "val_acc1": 0.7995,
+      "checkpoint": "<runs_root>/convnext_b_imagenet_label_shuffle_late_recovery_dynamics/checkpoints/sub_epoch/epoch_071_step_00833.ckpt"
+    }
+  ]
+}

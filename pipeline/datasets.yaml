@@ -1,0 +1,130 @@
+# Input dataset manifest.
+#
+# Every external input the pipeline reads, where to obtain it, and which
+# pipeline/paths.yaml key points at it. Small reference data ships in the repo
+# under pipeline/data/.
+#
+# Status legend:
+#   in_repo   — small reference file checked into pipeline/data/
+#   external  — download separately; set the named paths.yaml key
+
+datasets:
+
+  things_images:
+    description: "THINGS object images (1,854 concepts); train and probe CLIP-HBA, 1,854-concept behavioral RSA."
+    status: external
+    paths_key: things_images
+    source: "THINGS database (Hebart et al. 2019), https://osf.io/jum2f/"
+    notes: "1,806 train images + 48 fully-sampled triplet test images held out."
+
+  things_spose_train_embeddings:
+    description: "66-d SPoSE embeddings for the 1,806 THINGS training images."
+    status: in_repo
+    path: pipeline/data/spose_embedding66d_rescaled_1806train.csv
+    source: "Derived from THINGS-data SPoSE embedding (Hebart et al. 2020, 2023)."
+
+  things_spose_val_embeddings:
+    description: "66-d SPoSE embeddings for the 48 held-out THINGS validation images."
+    status: in_repo
+    path: pipeline/data/spose_embedding66d_rescaled_48val_reordered.csv
+
+  things_behavioral_rdm48:
+    description: "48x48 behavioral RDM derived from the THINGS triplet odd-one-out task."
+    status: in_repo
+    path: pipeline/data/RDM48_triplet.mat
+
+  things_full_spose_embeddings:
+    description: "66-d SPoSE embeddings for all 1,854 THINGS concepts."
+    status: in_repo
+    path: pipeline/data/spose_embedding66d_rescaled.csv
+
+  things_class_labels:
+    description: "Plain-text labels for the 66 SPoSE dimensions."
+    status: in_repo
+    path: pipeline/data/labels66.txt
+
+  things_fmri_concept_index:
+    description: "720-concept alphabetical order the THINGS-fMRI RDMs align to."
+    status: in_repo
+    path: pipeline/data/things_fmri_concept_index.npy
+
+  things_fmri_reference_rdms:
+    description: "27 subject-averaged THINGS-fMRI ROI RDMs (720x720 upper-tri vectors)."
+    status: in_repo
+    path: pipeline/data/things_fmri/reference_rdms/
+    notes: >
+      Built by pipeline/scripts/preprocessing/prepare_things_fmri_rdms.py from the
+      per-subject RDMs (paths key things_fmri_rdms; 3 subjects, averaged).
+      ROIs: l/r EBA,FFA,OFA,LOC,PPA,RSC,TOS + bilateral LOC + 12 pRF areas va-1..12.
+
+  things_fmri_source_rdms:
+    description: "Per-subject 720x720 THINGS-fMRI ROI RDMs (only needed to rebuild the reference set)."
+    status: external
+    paths_key: things_fmri_rdms
+    source: "THINGS-data fMRI release (Hebart et al. 2023), https://doi.org/10.25452/figshare.plus.c.6161151"
+
+  things_fmri_annotations:
+    description: "8,640 (concept, stimulus) rows for the 720 fMRI concepts; drives ThingsFMRIDataset."
+    status: in_repo
+    path: pipeline/data/things_fmri/things_fmri_annotations.csv
+
+  things_fmri_stimuli:
+    description: "THINGS-fMRI stimuli, concept-organized (<concept>/<stimulus>)."
+    status: external
+    paths_key: things_fmri_images
+    source: "THINGS-data fMRI release (Hebart et al. 2023)."
+
+  nod_stimuli:
+    description: "Natural Object Dataset (NOD) ImageNet stimuli for neural RSA / FR-RSA."
+    status: external
+    paths_key: nod_images
+    source: "NOD (Gong et al. 2023), OpenNeuro ds004496."
+
+  nod_reference_rdms:
+    description: "NOD ROI reference RDMs."
+    status: in_repo
+    path: pipeline/data/nod/reference_rdms/
+
+  imagenet_1k:
+    description: "ImageNet-1k (ILSVRC-2012) for evaluation (train/ and val/ class folders)."
+    status: external
+    paths_key: imagenet_root
+    source: "https://image-net.org or HuggingFace ILSVRC/imagenet-1k"
+    notes: >
+      Training the from-scratch models uses the HuggingFace parquet release with a
+      LitData index per split, passed to train_from_scratch.py via
+      --imagenet_train_dir / --imagenet_val_dir.
+
+  yfcc15m:
+    description: "YFCC15M image-text pairs (parquet shards) for CLIP ViT-B/32 contrastive training."
+    status: external
+    source: "YFCC15M subset (Radford et al. 2021) of YFCC100M (Thomee et al. 2016)."
+    notes: "Training only; passed to train_from_scratch.py via --parquet_data_dir."
+
+  probe_datasets:
+    description: "Linear-probe transfer datasets (CIFAR-10/100, VTAB exports, torchvision / clip_benchmark builders)."
+    status: external
+    paths_key: probe_datasets
+    notes: "Downloaded on first use; VTAB splits exported by pipeline/scripts/downloads/export_vtab_datasets.py."
+
+  pretrained_clip:
+    description: "OpenAI CLIP ViT-L/14 weights, the CLIP-HBA backbone."
+    status: external
+    paths_key: pretrained_clip
+    source: "https://github.com/openai/CLIP"
+
+# Checkpoint roots (produced by the training scripts)
+
+checkpoint_roots:
+
+  cliphba_runs:
+    description: "CLIP-HBA baseline and perturbation-sweep DoRA checkpoints (train_cliphba.py)."
+    paths_key: cliphba_runs_root
+    pattern_baseline: "baseline_seed{S}/vit_l_14_rank32_perturb-type-none_init-seed{S}behavioral-rsa-True"
+    pattern_perturbed: "{perturb_type}_perturb_seed{P}/epoch{E}_length{L}/vit_l_14_rank32_perturb-type-{perturb_type}_epoch{E}_length{L}_perturb-seed{P}_init-seed{R}behavioral-rsa-True"
+
+  scratch_runs:
+    description: "From-scratch RN50 / ViT-B/16 / ConvNeXt-B / CLIP ViT-B/32 Lightning checkpoints (train_from_scratch.py)."
+    paths_key: runs_root
+    pattern: "<run>/checkpoints/all_epochs/epoch_NNN.ckpt"
+    notes: "Run names and arguments: pipeline/configs/scratch_runs.yaml."

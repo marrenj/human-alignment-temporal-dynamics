@@ -1,0 +1,29 @@
+## ---PATHS--- ##
+inference_save_dir: "./pipeline/results"
+model_weights_path: "./pipeline/results"
+
+## ---MODEL PARAMETERS--- ##
+# `architecture` is supplied per run (RN50 / ViT-B/16 / ConvNeXt-B / etc.).
+architecture: RN50
+pretrained: false
+num_classes: 1000
+
+## ---INFERENCE PARAMETERS--- ##
+dataset: linear_probe
+evaluation_type: linear_probe
+training_mode: scratch
+cuda: 0
+batch_size: 256
+num_workers: 8
+
+## ---LINEAR_PROBE OPTIONS--- ##
+# 'paper' (27 classification datasets from arXiv:2505.14204) or comma-separated names.
+#
+# Smoke-test recipe (cheap, ~5 min on a single GPU):
+#   --set linear_probe_datasets=cifar10,cifar100,dtd,vtab/pets
+# Full paper suite is heavy: ImageNet-1k train extraction alone is ~1.2M images
+# per checkpoint per architecture per eval-epoch, so consider trimming for
+# initial sweeps.
+linear_probe_datasets: paper
+linear_probe_image_size: 224
+linear_probe_batch_size: 256

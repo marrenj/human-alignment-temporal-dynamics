@@ -1,0 +1,30 @@
+# Copy to pipeline/paths.yaml and fill in the locations on your machine.
+# Relative paths resolve against the repository root. Any key can be overridden
+# with an environment variable TP_<KEY> (e.g. TP_RUNS_ROOT=/data/runs).
+# See pipeline/datasets.yaml for where to obtain each dataset.
+
+# --- Stimulus and reference datasets --------------------------------------------------
+things_images: /path/to/THINGS/images            # THINGS object images (1,854 concepts)
+things_fmri_rdms: /path/to/THINGS-fMRI/all_rdm   # THINGS-fMRI ROI RDMs (used only to rebuild pipeline/data/things_fmri)
+things_fmri_images: /path/to/THINGS-fMRI/images  # 8,640 THINGS-fMRI stimuli
+things_fmri_metadata: /path/to/THINGS-fMRI/stimulus_metadata.csv  # used only to rebuild pipeline/data/things_fmri
+nod_rdms: /path/to/NOD/roi_rdms                   # per-subject NOD ROI RDMs (used only to rebuild pipeline/data/nod)
+nod_images: /path/to/NOD/imagenet                 # Natural Object Dataset stimuli
+imagenet_root: /path/to/imagenet                  # ImageNet-1k with train/ and val/ class folders
+probe_datasets: /path/to/probe_datasets           # TFDS / VTAB transfer datasets for linear probes
+
+# --- Model checkpoints ----------------------------------------------------------------
+runs_root: /path/to/runs                          # from-scratch runs: <run>/checkpoints/all_epochs/epoch_NNN.ckpt
+cliphba_runs_root: /path/to/cliphba_checkpoints   # CLIP-HBA fine-tuning sweep (baseline_seedS/, {type}_perturb_seedP/)
+pretrained_clip: /path/to/ViT-L-14.pt             # OpenAI CLIP ViT-L/14 weights for CLIP-HBA
+
+# --- From-scratch training data (the scratch_runs.yaml placeholders; read by fork_check.py) ---
+imagenet_train_dir: /path/to/imagenet_train_litdata   # LitData-indexed HF imagenet-1k train shards
+imagenet_val_dir: /path/to/imagenet_val_litdata       # LitData-indexed HF imagenet-1k validation shards
+yfcc15m_parquet_dir: /path/to/yfcc15m_litdata         # LitData-indexed YFCC15M parquet shards
+val_dataset_root: /path/to/cifar_cache                # CIFAR-10/100 cache for --multi_val
+
+# --- Outputs (default inside the repo) ------------------------------------------------
+# results_root: pipeline/results
+# figures_root: pipeline/figures
+# feature_cache: pipeline/cache

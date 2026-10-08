@@ -1,0 +1,40 @@
+{
+    "name": "ResNet-50",
+    "embed_dim": 512,
+    "vision_cfg": {
+        "layers": [3, 4, 6, 3],
+        "heads": 32,
+        "input_resolution": 224,
+        "width": 64,
+        "output_dim": 512,
+        "use_sync_bn": false,
+        "bn_group_size": 1,
+        "bn_sync_stats": false
+    },
+    "text_cfg": {
+        "context_length": 77,
+        "vocab_size": 49408,
+        "width": 512,
+        "heads": 8,
+        "layers": 12,
+        "mlp_ratio": 4.0,
+        "ls_init_value": null,
+        "embed_cls": false,
+        "pad_id": 0,
+        "no_causal_mask": false,
+        "final_ln_after_pool": false,
+        "pool_type": "argmax",
+        "proj_bias": false,
+        "proj_type": "linear",
+        "output_tokens": false,
+        "model_name": "openai/clip-vit-base-patch32"
+    },
+    "quick_gelu": false,
+    "init_logit_scale": 4.60517,
+    "init_logit_bias": null,
+    "cast_dtype": null,
+    "output_dict": false,
+    "text_model_name": "openai/clip-vit-base-patch32",
+    "text_pretrained": true,
+    "text_output_dim": 512
+} 

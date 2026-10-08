@@ -1,0 +1,39 @@
+{
+    "name": "supervised_imagenet_resnet50",
+    "task": "supervised",
+    "model": {
+        "name": "resnet50",
+        "num_classes": 1000,
+        "image_size": 224,
+        "pretrained": false,
+        "drop_path_rate": 0.0
+    },
+    "data": {
+        "dataset_type": "imagenet1k",
+        "data_dir": null,
+        "image_size": 224,
+        "batch_size": 256,
+        "num_workers": 8,
+        "pin_memory": true,
+        "interpolation": "bilinear",
+        "val_dataset_root": null,
+        "eval_batch_size": 256
+    },
+    "optimizer": {"name": "sgd", "lr": 0.4, "weight_decay": 1e-4, "momentum": 0.9, "nesterov": true},
+    "scheduler": {"name": "cosine", "warmup_steps": 5000, "min_lr": 0.0},
+    "loss": {"name": "cross_entropy", "label_smoothing": 0.1},
+    "distributed": {"strategy": "ddp", "sync_batchnorm": true, "find_unused_parameters": false, "num_nodes": 1},
+    "epochs": 90,
+    "precision": "32-true",
+    "seed": 42,
+    "gradient_clip_val": null,
+    "accumulate_grad_batches": null,
+    "target_batch_size": 1024,
+    "log_every_n_steps": 50,
+    "save_dir": null,
+    "save_top_k": 5,
+    "deterministic": true,
+    "validate_every_n_epoch": 1,
+    "monitor_metric": "val/imagenet/acc1",
+    "monitor_mode": "max"
+}

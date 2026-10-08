@@ -1,0 +1,22 @@
+{
+  "run_name": "convnext_b_imagenet_label_shuffle_early",
+  "architecture": "convnext_b_imagenet",
+  "timm_model": "convnext_base",
+  "perturb_type": "label_shuffle",
+  "timing": "early",
+  "epoch": 5,
+  "n_bn_layers": 0,
+  "val_images": 10000,
+  "val_per_class": 10,
+  "calib_images": 8000,
+  "as_is": {
+    "val_ce_loss": 6.909755634307861,
+    "val_acc1": 0.001
+  },
+  "bn_recalibrated": {
+    "val_ce_loss": 6.909755634307861,
+    "val_acc1": 0.001
+  },
+  "logged_val_acc1": 0.0010000000474974513,
+  "checkpoint": "<runs_root>/convnext_b_imagenet_label_shuffle_early/checkpoints/all_epochs/epoch_005.ckpt"
+}

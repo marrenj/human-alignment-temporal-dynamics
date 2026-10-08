@@ -1,0 +1,22 @@
+{
+  "run_name": "convnext_b_imagenet_baseline",
+  "architecture": "convnext_b_imagenet",
+  "timm_model": "convnext_base",
+  "perturb_type": "none",
+  "timing": "late",
+  "epoch": 70,
+  "n_bn_layers": 0,
+  "val_images": 10000,
+  "val_per_class": 10,
+  "calib_images": 8000,
+  "as_is": {
+    "val_ce_loss": 0.8225710681915284,
+    "val_acc1": 0.8016
+  },
+  "bn_recalibrated": {
+    "val_ce_loss": 0.8225710681915284,
+    "val_acc1": 0.8016
+  },
+  "logged_val_acc1": 0.8028600215911865,
+  "checkpoint": "<runs_root>/convnext_b_imagenet_baseline/checkpoints/all_epochs/epoch_070.ckpt"
+}
